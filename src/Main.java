@@ -1,6 +1,8 @@
 import monstros.MonstroDeAgua;
 import monstros.MonstroDeFogo;
 import jogador.Jogador;
+
+import java.util.InputMismatchException;
 import java.util.Random;
 
 import java.util.Scanner;
@@ -8,6 +10,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        Random random = new Random();
 
         System.out.println("========================================");
         System.out.println("      🏆 TORNEIO DE CAMPEÕES 🏆");
@@ -26,27 +29,42 @@ public class Main {
         System.out.print("Digite seu nome: ");
         String nome = sc.nextLine();
 
-        System.out.println("========================================");
-        System.out.println("     ESCOLHA O SEU TIPO DE MONSTRO");
-        System.out.println("========================================\n");
+        do {
+            System.out.println("========================================");
+            System.out.println("     ESCOLHA O SEU TIPO DE MONSTRO");
+            System.out.println("========================================\n");
 
-        System.out.println("        [ 1 ] Água        [ 2 ] Fogo\n");
-        System.out.println("        [ 3 ] Terra       [ 4 ] Ar\n");
-        System.out.println("             [ 5 ] Aleatório\n");
+            System.out.println("        [ 1 ] Água        [ 2 ] Fogo\n");
+            System.out.println("        [ 3 ] Terra       [ 4 ] Ar\n");
+            System.out.println("             [ 5 ] Aleatório\n");
 
-        System.out.println("========================================");
-        System.out.print("Digite o número do monstro que guiara o seu destino: ");
-        int opcao = sc.nextInt();
+            System.out.println("========================================");
+            try {
+                System.out.print("Digite o número do monstro que guiará o seu destino: ");
+                int opcao = sc.nextInt();
+                sc.nextLine(); // Pegar o espaço invisivel
 
-        if (opcao == 1){
-            System.out.println("Você adquiriu um Monstro do tipo d'água!");
-            System.out.print("Dê um apelido para ele(a):");
-            String apelido = sc.nextLine();
+                if (opcao == 1){
+                    System.out.println("Você adquiriu um Monstro do tipo d'água!");
+                    System.out.print("Dê um apelido para ele(a):");
+                    String apelido = sc.nextLine();
 
-            MonstroDeAgua monstroDeAgua = new MonstroDeAgua(apelido);
+                    MonstroDeAgua monstroDeAgua = new MonstroDeAgua(apelido);
 
-            Jogador jogador = new Jogador(nome, monstroDeAgua);
-        }
+                    Jogador jogador = new Jogador(nome, monstroDeAgua);
+                } else if (opcao == 5) {
+                    int numero = random.nextInt(5)+1; //ele gera de 1 a 5
+
+
+                } else {
+                    System.out.println("Digite Apenas números de 1 a 5!");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Erro! Apenas números são aceitos!");
+            }
+
+        }while (true);
+
 
         /**
          * ==============================
