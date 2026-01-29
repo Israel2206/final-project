@@ -1,5 +1,7 @@
+import monstros.MonstroDeAgua;
 import monstros.MonstroDeFogo;
 import jogador.Jogador;
+import java.util.Random;
 
 import java.util.Scanner;
 
@@ -24,8 +26,27 @@ public class Main {
         System.out.print("Digite seu nome: ");
         String nome = sc.nextLine();
 
+        System.out.println("========================================");
+        System.out.println("     ESCOLHA O SEU TIPO DE MONSTRO");
+        System.out.println("========================================\n");
 
+        System.out.println("        [ 1 ] Água        [ 2 ] Fogo\n");
+        System.out.println("        [ 3 ] Terra       [ 4 ] Ar\n");
+        System.out.println("             [ 5 ] Aleatório\n");
 
+        System.out.println("========================================");
+        System.out.print("Digite o número do monstro que guiara o seu destino: ");
+        int opcao = sc.nextInt();
+
+        if (opcao == 1){
+            System.out.println("Você adquiriu um Monstro do tipo d'água!");
+            System.out.print("Dê um apelido para ele(a):");
+            String apelido = sc.nextLine();
+
+            MonstroDeAgua monstroDeAgua = new MonstroDeAgua(apelido);
+
+            Jogador jogador = new Jogador(nome, monstroDeAgua);
+        }
 
         /**
          * ==============================
