@@ -29,7 +29,7 @@ public class Paineis {
 
         System.out.println("========================================");
     }
-        public void mostrarPainel(Jogador jogador, Monstro m) {
+        public void menuPainel(Jogador jogador, Monstro m) {
             System.out.println("==============================");
             System.out.println("        STATUS DO JOGADOR");
             System.out.println("==============================");

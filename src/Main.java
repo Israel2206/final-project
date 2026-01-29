@@ -37,6 +37,7 @@ public class Main {
                     MonstroDeAgua monstroDeAgua = new MonstroDeAgua(apelido);
 
                     Jogador jogador = new Jogador(nome, monstroDeAgua);
+                    painel.menuPainel(jogador, monstroDeAgua);
                     break;
                 } else if (opcao == 2){
                     System.out.println("Você adquiriu um Monstro do tipo de Fogo!");
@@ -46,6 +47,7 @@ public class Main {
                     MonstroDeFogo monstroDeFogo = new MonstroDeFogo(apelido);
 
                     Jogador jogador = new Jogador(nome, monstroDeFogo);
+                    painel.menuPainel(jogador, monstroDeFogo);
                     break;
                 } else if (opcao == 3){
                     System.out.println("Você adquiriu um Monstro do tipo de Terra!");
@@ -55,6 +57,7 @@ public class Main {
                     MonstroDeTerra monstroDeTerra = new MonstroDeTerra(apelido);
 
                     Jogador jogador = new Jogador(nome, monstroDeTerra);
+                    painel.menuPainel(jogador, monstroDeTerra);
                     break;
                 }else if (opcao == 4){
                     System.out.println("Você adquiriu um Monstro do tipo de Ar!");
@@ -64,6 +67,7 @@ public class Main {
                     MonstroDeAr monstroDeAr = new MonstroDeAr(apelido);
 
                     Jogador jogador = new Jogador(nome, monstroDeAr);
+                    painel.menuPainel(jogador, monstroDeAr);
                     break;
                 }else if (opcao == 5) {
                     int numero = random.nextInt(5)+1; //ele gera de 1 a 5
@@ -75,6 +79,7 @@ public class Main {
                         MonstroDeAgua monstroDeAgua = new MonstroDeAgua(apelido);
 
                         Jogador jogador = new Jogador(nome, monstroDeAgua);
+                        painel.menuPainel(jogador, monstroDeAgua);
                         break;
                     }else if (numero == 2){
                         System.out.println("Você adquiriu um Monstro do tipo de Fogo!");
@@ -84,6 +89,7 @@ public class Main {
                         MonstroDeFogo monstroDeFogo = new MonstroDeFogo(apelido);
 
                         Jogador jogador = new Jogador(nome, monstroDeFogo);
+                        painel.menuPainel(jogador, monstroDeFogo);
                         break;
                     }else if (numero == 3){
                         System.out.println("Você adquiriu um Monstro do tipo de Terra!");
@@ -93,6 +99,7 @@ public class Main {
                         MonstroDeTerra monstroDeTerra = new MonstroDeTerra(apelido);
 
                         Jogador jogador = new Jogador(nome, monstroDeTerra);
+                        painel.menuPainel(jogador, monstroDeTerra);
                         break;
                     } else if (numero == 4) {
                         System.out.println("Você adquiriu um Monstro do tipo de Ar!");
@@ -102,7 +109,7 @@ public class Main {
                         MonstroDeAr monstroDeAr = new MonstroDeAr(apelido);
 
                         Jogador jogador = new Jogador(nome, monstroDeAr);
-                        painel.mostrarPainel(jogador, monstroDeAr);
+                        painel.menuPainel(jogador, monstroDeAr);
                         break;
                     } else {
                         System.out.println("Parabéns você adquiriu um monstro raro! O poderoso Rola-Bosta!");
@@ -110,7 +117,7 @@ public class Main {
                         RolaBosta rolaBosta = new RolaBosta("Rola Bosta");
 
                         Jogador jogador = new Jogador(nome, rolaBosta);
-                      painel.mostrarPainel(jogador, rolaBosta);
+                      painel.menuPainel(jogador, rolaBosta);
                         break;
                     }
                 } else {
