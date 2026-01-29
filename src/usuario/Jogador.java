@@ -8,8 +8,16 @@ public class Jogador {
     private int pocaoIm;
     private Monstro monstro;
 
-    public Jogador(String nome) {
+    public Jogador(String nome, Monstro monstro) {
         this.nome = nome;
+    }
+
+    public Monstro getMonstro() {
+        return monstro;
+    }
+
+    public void setMonstro(Monstro monstro) {
+        this.monstro = monstro;
     }
 
     public String getNome() {
