@@ -22,6 +22,9 @@ public class Main {
         System.out.print("Digite seu nome: ");
         String nome = sc.nextLine();
 
+        Monstro monstroEscolhido = null;
+        Jogador jogador = null;
+
         do {
             painel.painelDeEscolherMonstro();
             try {
@@ -34,40 +37,40 @@ public class Main {
                     System.out.print("Dê um apelido para ele(a):");
                     String apelido = sc.nextLine();
 
-                    MonstroDeAgua monstroDeAgua = new MonstroDeAgua(apelido);
+                    monstroEscolhido = new MonstroDeAgua(apelido);
 
-                    Jogador jogador = new Jogador(nome, monstroDeAgua);
-                    painel.menuPainel(jogador, monstroDeAgua);
+                    jogador = new Jogador(nome, monstroEscolhido);
+                    painel.menuPainel(jogador, monstroEscolhido);
                     break;
                 } else if (opcao == 2){
                     System.out.println("Você adquiriu um Monstro do tipo de Fogo!");
                     System.out.print("Dê um apelido para ele(a):");
                     String apelido = sc.nextLine();
 
-                    MonstroDeFogo monstroDeFogo = new MonstroDeFogo(apelido);
+                    monstroEscolhido = new MonstroDeFogo(apelido);
 
-                    Jogador jogador = new Jogador(nome, monstroDeFogo);
-                    painel.menuPainel(jogador, monstroDeFogo);
+                    jogador = new Jogador(nome, monstroEscolhido);
+                    painel.menuPainel(jogador, monstroEscolhido);
                     break;
                 } else if (opcao == 3){
                     System.out.println("Você adquiriu um Monstro do tipo de Terra!");
                     System.out.print("Dê um apelido para ele(a):");
                     String apelido = sc.nextLine();
 
-                    MonstroDeTerra monstroDeTerra = new MonstroDeTerra(apelido);
+                    monstroEscolhido = new MonstroDeTerra(apelido);
 
-                    Jogador jogador = new Jogador(nome, monstroDeTerra);
-                    painel.menuPainel(jogador, monstroDeTerra);
+                    jogador = new Jogador(nome, monstroEscolhido);
+                    painel.menuPainel(jogador, monstroEscolhido);
                     break;
                 }else if (opcao == 4){
                     System.out.println("Você adquiriu um Monstro do tipo de Ar!");
                     System.out.print("Dê um apelido para ele(a):");
                     String apelido = sc.nextLine();
 
-                    MonstroDeAr monstroDeAr = new MonstroDeAr(apelido);
+                    monstroEscolhido = new MonstroDeAr(apelido);
 
-                    Jogador jogador = new Jogador(nome, monstroDeAr);
-                    painel.menuPainel(jogador, monstroDeAr);
+                    jogador = new Jogador(nome, monstroEscolhido);
+                    painel.menuPainel(jogador, monstroEscolhido);
                     break;
                 }else if (opcao == 5) {
                     int numero = random.nextInt(5)+1; //ele gera de 1 a 5
@@ -76,48 +79,48 @@ public class Main {
                         System.out.print("Dê um apelido para ele(a):");
                         String apelido = sc.nextLine();
 
-                        MonstroDeAgua monstroDeAgua = new MonstroDeAgua(apelido);
+                        monstroEscolhido= new MonstroDeAgua(apelido);
 
-                        Jogador jogador = new Jogador(nome, monstroDeAgua);
-                        painel.menuPainel(jogador, monstroDeAgua);
+                        jogador = new Jogador(nome, monstroEscolhido);
+                        painel.menuPainel(jogador, monstroEscolhido);
                         break;
                     }else if (numero == 2){
                         System.out.println("Você adquiriu um Monstro do tipo de Fogo!");
                         System.out.print("Dê um apelido para ele(a):");
                         String apelido = sc.nextLine();
 
-                        MonstroDeFogo monstroDeFogo = new MonstroDeFogo(apelido);
+                        monstroEscolhido = new MonstroDeFogo(apelido);
 
-                        Jogador jogador = new Jogador(nome, monstroDeFogo);
-                        painel.menuPainel(jogador, monstroDeFogo);
+                        jogador = new Jogador(nome, monstroEscolhido);
+                        painel.menuPainel(jogador, monstroEscolhido);
                         break;
                     }else if (numero == 3){
                         System.out.println("Você adquiriu um Monstro do tipo de Terra!");
                         System.out.print("Dê um apelido para ele(a):");
                         String apelido = sc.nextLine();
 
-                        MonstroDeTerra monstroDeTerra = new MonstroDeTerra(apelido);
+                        monstroEscolhido = new MonstroDeTerra(apelido);
 
-                        Jogador jogador = new Jogador(nome, monstroDeTerra);
-                        painel.menuPainel(jogador, monstroDeTerra);
+                        jogador = new Jogador(nome, monstroEscolhido);
+                        painel.menuPainel(jogador, monstroEscolhido);
                         break;
                     } else if (numero == 4) {
                         System.out.println("Você adquiriu um Monstro do tipo de Ar!");
                         System.out.print("Dê um apelido para ele(a):");
                         String apelido = sc.nextLine();
 
-                        MonstroDeAr monstroDeAr = new MonstroDeAr(apelido);
+                        monstroEscolhido = new MonstroDeAr(apelido);
 
-                        Jogador jogador = new Jogador(nome, monstroDeAr);
-                        painel.menuPainel(jogador, monstroDeAr);
+                        jogador = new Jogador(nome, monstroEscolhido);
+                        painel.menuPainel(jogador, monstroEscolhido);
                         break;
                     } else {
                         System.out.println("Parabéns você adquiriu um monstro raro! O poderoso Rola-Bosta!");
 
-                        RolaBosta rolaBosta = new RolaBosta("Rola Bosta");
+                        monstroEscolhido = new RolaBosta("Rola Bosta");
 
-                        Jogador jogador = new Jogador(nome, rolaBosta);
-                        painel.menuPainel(jogador, rolaBosta);
+                        jogador = new Jogador(nome, monstroEscolhido);
+                        painel.menuPainel(jogador, monstroEscolhido);
                         break;
                     }
                 } else {
@@ -129,6 +132,11 @@ public class Main {
             }
 
         }while (true);
+
+        painel.painelDoTutorial();
+        int opcaoTutorial = sc.nextInt();
+        sc.nextLine(); // pegar espaço vazio
+        System.out.println("======================================");
 
 
     }

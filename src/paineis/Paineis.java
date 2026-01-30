@@ -42,4 +42,20 @@ public class Paineis {
         System.out.println("Imunidade : " + jogador.getPocaoIm());
         System.out.println("==============================");
     }
+
+    public void painelDoTutorial(){
+        System.out.println("\n======================================");
+        System.out.println();
+        System.out.println("Você dá alguns passos à frente...");
+        System.out.println("Um rosnado ecoa no silêncio.");
+        System.out.println();
+        System.out.println("Um monstro aparece diante de você.");
+        System.out.println("Ele não parece disposto a recuar.");
+        System.out.println();
+        System.out.println("Seu coração acelera.");
+        System.out.println();
+        System.out.println("Qual será sua decisão?");
+        System.out.println();
+        System.out.println("[ 1 ] Atacar     [ 2 ] Fugir");
+    }
 }
