@@ -140,7 +140,7 @@ public class Main {
 
         int opcaoTutorial = -1;
 
-        while (true) {
+        while (true) { //Antes de começar a Batalha de "tutorial"
             try {
                 painel.painelDoTutorial();
                 System.out.print("Escolha uma opção: ");

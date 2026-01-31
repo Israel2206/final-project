@@ -7,5 +7,6 @@ public class MonstroDeFogo  extends Monstro{
         this.tipo = "fogo";
         this.dano = 13;
         this.vida = 35;
+        this.fullVida = 35;
     }
 }

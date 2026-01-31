@@ -5,14 +5,12 @@ import monstros.Monstro;
 public class Jogador {
     private String nome;
     private int pocaoHp;
-    private int pocaoIm;
     private Monstro monstro;
 
     public Jogador(String nome, Monstro monstro) {
         this.nome = nome;
         this.monstro = monstro;
         this.pocaoHp = 1;
-        this.pocaoIm = 0;
     }
 
 
@@ -40,11 +38,4 @@ public class Jogador {
         this.pocaoHp = pocaoHp;
     }
 
-    public int getPocaoIm() {
-        return pocaoIm;
-    }
-
-    public void setPocaoIm(int pocaoIm) {
-        this.pocaoIm = pocaoIm;
-    }
 }

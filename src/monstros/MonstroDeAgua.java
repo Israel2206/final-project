@@ -7,5 +7,6 @@ public class MonstroDeAgua extends Monstro{
         this.tipo = "agua";
         this.dano = 13;
         this.vida = 35;
+        this.fullVida = 35;
     }
 }

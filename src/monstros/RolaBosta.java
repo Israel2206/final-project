@@ -7,5 +7,6 @@ public class RolaBosta extends Monstro {
         this.tipo = "Bosta";
         this.dano = 7;
         this.vida = 45;
+        this.fullVida = 45;
     }
 }

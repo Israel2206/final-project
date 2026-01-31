@@ -60,16 +60,23 @@ public class lutaTutorial {
                 System.out.println("Sua vez!");
                 System.out.println("[ 1 ] Investida Rápida");
                 System.out.println("[ 2 ] Golpe Feroz");
-                System.out.println("[ 3 ] Fugir");
+                System.out.println("[ 3 ] Usar Poção de HP (" + jogador.getPocaoHp()+")");
+                System.out.println("[ 4 ] Fugir");
                 System.out.print("Escolha uma ação: ");
 
                 escolha = sc.nextInt();
                 sc.nextLine(); // limpa buffer
 
-                if (escolha >= 1 && escolha <= 3) {
+                //esse if só funciona aqui!!!!!
+                if (escolha == 3){
+                    usarPocao(jogador, monstroJogador);
+                    continue;
+                }
+
+                if (escolha >= 1 && escolha <= 4) {
                     break;
                 } else {
-                    System.out.println("Opção inválida! Digite apenas 1, 2 ou 3.");
+                    System.out.println("Opção inválida! Digite apenas 1, 2, 3 ou 4.");
                 }
 
             } catch (InputMismatchException e) {
@@ -78,11 +85,13 @@ public class lutaTutorial {
             }
         }
 
+
         switch (escolha) {
             case 1 -> ataqueBasico("Investida Rápida", 1.0);
-            case 2 -> ataqueBasico("Golpe Feroz", 1.4);
-            case 3 -> fugir();
+            case 2 -> ataqueBasico("Golpe Feroz", 1.2);
+            case 4 -> fugir();
         }
+
     }
 
     private void turnoInimigo() {
@@ -104,7 +113,7 @@ public class lutaTutorial {
     private void ataqueBasico(String nomeAtaque, double multiplicador) {
         System.out.println("\n" + monstroJogador.getNome() + " usou " + nomeAtaque + "!");
 
-        if (random.nextInt(100) < 70) {
+        if (random.nextInt(100) < 75) {
             int dano = (int) (monstroJogador.getDano() * multiplicador);
             aplicarDano(monstroInimigo, dano);
             System.out.println("Ataque acertou! Dano causado: " + dano);
@@ -118,6 +127,31 @@ public class lutaTutorial {
     private void fugir() {
         System.out.println("Você tentou fugir... mas o destino não permite.");
     }
+
+
+    public void usarPocao(Jogador jogador, Monstro monstro){
+        if (jogador.getPocaoHp() < 1){
+            System.out.println("Poções Indisponiveis!");
+        } else {
+            if (monstroJogador.getVida() >= monstroJogador.getFullVida()){
+                monstroJogador.setVida(monstroJogador.getFullVida());
+                System.out.println("Impossível utilizar poção! HP do monstro cheio");
+            }
+
+            else if (monstroJogador.getVida() < monstroJogador.getFullVida()-15){ //ele cura +15, mas n ultrapassa
+                jogador.setPocaoHp(jogador.getPocaoHp()-1);
+                monstroJogador.setVida(monstroJogador.getVida()+15);
+                System.out.println("Poção usada com sucesso!\n+15 de Cura!");
+            }
+
+            else {
+                monstroJogador.setVida(monstroJogador.getVida()+15);
+                System.out.println("Poção usada com sucesso!\n+15 de Cura!");
+                jogador.setPocaoHp(jogador.getPocaoHp()-1);
+            }
+        }
+    }
+
 
     // ================= CONTROLE DE VIDA =================
 
