@@ -52,7 +52,7 @@ public class lutaTutorial {
                 jogador.setPocaoHp(jogador.getPocaoHp() + 1);
 
                 System.out.println("A Vida do seu " + monstroJogador.getNome() + " está cheia novamente!");
-                monstroJogador.setVida(monstroInimigo.getFullVida());
+                monstroJogador.setVida(monstroJogador.getFullVida());
                 paineis.pausa(1000);
                 vitoria = true;
                 break;
@@ -90,9 +90,9 @@ public class lutaTutorial {
                 System.out.println("Sua vez!");
                 paineis.pausa(300);
 
-                System.out.println("[ 1 ] Investida Rápida");
+                System.out.println("[ 1 ] "+monstroJogador.getAtaqueBase());
                 paineis.pausa(200);
-                System.out.println("[ 2 ] Golpe Feroz");
+                System.out.println("[ 2 ] "+monstroJogador.getAtaqueEspecial());
                 paineis.pausa(200);
                 System.out.println("[ 3 ] Usar Poção de HP (" + jogador.getPocaoHp() + ")");
                 paineis.pausa(200);
@@ -107,7 +107,7 @@ public class lutaTutorial {
                 // esse if só funciona aqui!!!!!
                 if (escolha == 3){
                     paineis.pausa(400);
-                    usarPocao(jogador, monstroJogador);
+                    jogador.usarPocao(jogador, monstroJogador);
                     paineis.pausa(600);
                     continue;
                 }
@@ -128,8 +128,8 @@ public class lutaTutorial {
 
         paineis.pausa(500);
         switch (escolha) {
-            case 1 -> ataqueBasico("Investida Rápida", 1.0);
-            case 2 -> ataqueBasico("Golpe Feroz", 1.2);
+            case 1 -> ataqueBasico(monstroJogador.getAtaqueBase(), monstroJogador.getMultiplicadorBase());
+            case 2 -> ataqueBasico(monstroJogador.getAtaqueEspecial(), monstroJogador.getMultiplicadorEspecial());
             case 4 -> fugir();
         }
     }
@@ -141,7 +141,7 @@ public class lutaTutorial {
 
         if (random.nextInt(100) < 75) {
             int dano = monstroInimigo.getDano();
-            aplicarDano(monstroJogador, dano);
+            monstroInimigo.ataqueSimples(monstroJogador, dano);
             paineis.pausa(400);
             System.out.println("Ele acertou e causou " + dano + " de dano!");
         } else {
@@ -150,7 +150,9 @@ public class lutaTutorial {
         }
 
         paineis.pausa(600);
-        mostrarVida();
+        //Não importa se aqui for o monstro jogador ou o monstro inimigo, isso é apenas para mostrar a vida dos monstros
+        monstroJogador.mostrarVida(monstroJogador, monstroInimigo);
+
     }
 
     // ================= AÇÕES =================
@@ -160,58 +162,18 @@ public class lutaTutorial {
 
         if (random.nextInt(100) < 75) {
             int dano = (int) (monstroJogador.getDano() * multiplicador);
-            aplicarDano(monstroInimigo, dano);
+            monstroJogador.ataqueSimples(monstroInimigo, dano);
             System.out.println("Ataque acertou! Dano causado: " + dano);
         } else {
             System.out.println("Mas o ataque errou!");
         }
 
-        mostrarVida();
+        //Não importa se aqui for o monstro jogador ou o monstro inimigo, isso é apenas para mostrar a vida dos monstros
+        monstroJogador.mostrarVida(monstroJogador, monstroInimigo);
     }
 
     private void fugir() {
         System.out.println("Você tentou fugir... mas o destino não permite.");
     }
 
-
-    public void usarPocao(Jogador jogador, Monstro monstro){
-        if (jogador.getPocaoHp() < 1){
-            System.out.println("Poções Indisponiveis!");
-        } else {
-            if (monstroJogador.getVida() >= monstroJogador.getFullVida()){ //não ultrapassar a vida
-                monstroJogador.setVida(monstroJogador.getFullVida());
-                System.out.println("Impossível utilizar poção! HP do monstro cheio");
-            }
-
-            else if (monstroJogador.getVida() >= monstroJogador.getFullVida()-15){ //ele cura +15, mas n ultrapassa
-                int cura = monstroJogador.getFullVida() - monstroJogador.getVida(); //pega o valor exato da cura pra n ultrapassar!
-                jogador.setPocaoHp(jogador.getPocaoHp()-1);
-                monstroJogador.setVida(monstroJogador.getVida()+cura);
-                System.out.println("Poção usada com sucesso!\n+"+cura+" de Cura!");
-            }
-
-            else {
-                monstroJogador.setVida(monstroJogador.getVida()+15);
-                System.out.println("Poção usada com sucesso!\n+15 de Cura!");
-                jogador.setPocaoHp(jogador.getPocaoHp()-1);
-            }
-        }
-    }
-
-    // ================= CONTROLE DE VIDA =================
-
-    private void aplicarDano(Monstro alvo, int dano) {
-        int novaVida = alvo.getVida() - dano;
-
-        if (novaVida < 0) {
-            novaVida = 0;
-        }
-
-        alvo.setVida(novaVida);
-    }
-
-    private void mostrarVida() {
-        System.out.println("\nVida do seu monstro: " + monstroJogador.getVida());
-        System.out.println("Vida do inimigo: " + monstroInimigo.getVida());
-    }
 }
