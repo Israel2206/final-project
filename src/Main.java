@@ -186,6 +186,10 @@ public class Main {
         lutaTutorial luta = new lutaTutorial(jogador);
         luta.iniciar();
 
-
+        if (!luta.vitoria){
+            System.out.println("\n=== GAME OVER ===");
+        } else {
+            //começar as outras lutas aqui
+        }
     }
 }

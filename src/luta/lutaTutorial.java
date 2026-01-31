@@ -14,6 +14,7 @@ public class lutaTutorial {
     private Monstro monstroJogador;
     private Monstro monstroInimigo;
     private Paineis paineis = new Paineis();
+    public boolean vitoria;
 
     private Scanner sc = new Scanner(System.in);
     private Random random = new Random();
@@ -53,6 +54,7 @@ public class lutaTutorial {
                 System.out.println("A Vida do seu " + monstroJogador.getNome() + " está cheia novamente!");
                 monstroJogador.setVida(monstroInimigo.getFullVida());
                 paineis.pausa(1000);
+                vitoria = true;
                 break;
             }
 
@@ -70,7 +72,7 @@ public class lutaTutorial {
                 paineis.pausa(800);
                 System.out.println("Mas em quem estava tomando as decisões.");
                 paineis.pausa(1200);
-
+                vitoria=false;
                 break;
             }
         }
