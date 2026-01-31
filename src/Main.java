@@ -1,6 +1,9 @@
+import luta.lutaTutorial;
 import monstros.*;
 import jogador.Jogador;
 import paineis.Paineis;
+import luta.lutaTutorial;
+
 
 import java.util.InputMismatchException;
 import java.util.Random;
@@ -24,6 +27,8 @@ public class Main {
 
         Monstro monstroEscolhido = null;
         Jogador jogador = null;
+
+
 
         do {
             painel.painelDeEscolherMonstro();
@@ -133,10 +138,36 @@ public class Main {
 
         }while (true);
 
-        painel.painelDoTutorial();
-        int opcaoTutorial = sc.nextInt();
-        sc.nextLine(); // pegar espaço vazio
+        int opcaoTutorial = -1;
+
+        while (true) {
+            try {
+                painel.painelDoTutorial();
+                System.out.print("Escolha uma opção: ");
+
+                opcaoTutorial = sc.nextInt();
+                sc.nextLine();
+
+                if (opcaoTutorial == 1 || opcaoTutorial == 2) {
+                    break;
+                } else {
+                    System.out.println(" Opção inválida! Digite apenas 1 ou 2.");
+                }
+
+            } catch (InputMismatchException e) {
+                sc.nextLine();
+                System.out.println("Entrada inválida! Digite apenas números.");
+            }
+        }
+
         System.out.println("======================================");
+
+        if (opcaoTutorial == 2) {
+            System.out.println("Você tentou fugir... mas o destino não permite.");
+        }
+
+        lutaTutorial luta = new lutaTutorial(jogador);
+        luta.iniciar();
 
 
     }

@@ -10,7 +10,11 @@ public class Jogador {
 
     public Jogador(String nome, Monstro monstro) {
         this.nome = nome;
+        this.monstro = monstro;
+        this.pocaoHp = 1;
+        this.pocaoIm = 0;
     }
+
 
     public Monstro getMonstro() {
         return monstro;
