@@ -14,7 +14,7 @@ public class lutaTutorial {
     private Monstro monstroJogador;
     private Monstro monstroInimigo;
     private Paineis paineis = new Paineis();
-    public boolean vitoria;
+    public boolean vitoria = true;
 
     private Scanner sc = new Scanner(System.in);
     private Random random = new Random();
@@ -77,7 +77,6 @@ public class lutaTutorial {
             }
         }
     }
-
 
     // ================= TURNOS =================
 

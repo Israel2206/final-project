@@ -1,3 +1,4 @@
+import luta.LutaUm;
 import luta.lutaTutorial;
 import monstros.*;
 import jogador.Jogador;
@@ -167,7 +168,7 @@ public class Main {
                 if (opcaoTutorial == 1 || opcaoTutorial == 2) {
                     break;
                 } else {
-                    System.out.println(" Opção inválida! Digite apenas 1 ou 2.");
+                    System.out.println("Opção inválida! Digite apenas 1 ou 2.");
                 }
 
             } catch (InputMismatchException e) {
@@ -183,13 +184,13 @@ public class Main {
             painel.pausa(1500);
         }
 
-        lutaTutorial luta = new lutaTutorial(jogador);
-        luta.iniciar();
+        lutaTutorial lutaTutorial = new lutaTutorial(jogador);
+        lutaTutorial.iniciar();
 
-        if (!luta.vitoria){
+        if (!lutaTutorial.vitoria){
             System.out.println("\n=== GAME OVER ===");
         } else {
-            //começar as outras lutas aqui
+            //TODO faz o código aqui
         }
     }
 }

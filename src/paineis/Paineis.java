@@ -88,4 +88,28 @@ public class Paineis {
              * ele restaura o estado de interrupção da thread.*/
         }
     }
+
+    public void painelLutaUm(String nomeInimigo, String nomeMonstroInimigo) {
+        pausa(800);
+        System.out.println("\n======================================");
+        System.out.println("        MENSAGEM DA ARENA");
+        System.out.println("======================================");
+        System.out.println();
+        pausa(900);
+
+        System.out.println("Após superar os desafios do caminho,");
+        pausa(600);
+        System.out.println("você finalmente chega à arena do torneio.");
+        System.out.println();
+        pausa(1000);
+
+        System.out.println("O portão se fecha atrás de você.");
+        pausa(600);
+        System.out.println("A multidão reage com expectativa.");
+        System.out.println();
+        pausa(900);
+
+        System.out.println("======================================");
+    }
+
 }
