@@ -85,19 +85,7 @@ public class lutaTutorial {
 
         while (true) {
             try {
-                paineis.pausa(400);
-                System.out.println("----------------------------");
-                System.out.println("Sua vez!");
-                paineis.pausa(300);
-
-                System.out.println("[ 1 ] "+monstroJogador.getAtaqueBase());
-                paineis.pausa(200);
-                System.out.println("[ 2 ] "+monstroJogador.getAtaqueEspecial());
-                paineis.pausa(200);
-                System.out.println("[ 3 ] Usar Poção de HP (" + jogador.getPocaoHp() + ")");
-                paineis.pausa(200);
-                System.out.println("[ 4 ] Fugir");
-                paineis.pausa(300);
+                paineis.painelDaLuta(jogador,monstroJogador);
 
                 System.out.print("Escolha uma ação: ");
 
@@ -141,7 +129,7 @@ public class lutaTutorial {
 
         if (random.nextInt(100) < 75) {
             int dano = monstroInimigo.getDano();
-            monstroInimigo.ataqueSimples(monstroJogador, dano);
+            monstroInimigo.aplicarDano(monstroJogador, dano);
             paineis.pausa(400);
             System.out.println("Ele acertou e causou " + dano + " de dano!");
         } else {
@@ -162,7 +150,7 @@ public class lutaTutorial {
 
         if (random.nextInt(100) < 75) {
             int dano = (int) (monstroJogador.getDano() * multiplicador);
-            monstroJogador.ataqueSimples(monstroInimigo, dano);
+            monstroJogador.aplicarDano(monstroInimigo, dano);
             System.out.println("Ataque acertou! Dano causado: " + dano);
         } else {
             System.out.println("Mas o ataque errou!");

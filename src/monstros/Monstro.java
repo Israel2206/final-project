@@ -1,6 +1,8 @@
 package monstros;
 
-import jogador.Jogador;
+import paineis.Paineis;
+
+import java.util.Random;
 
 public class Monstro {
     protected String nome;
@@ -12,6 +14,7 @@ public class Monstro {
     protected double multiplicadorBase;
     protected String ataqueEspecial;
     protected double multiplicadorEspecial;
+    private Random random = new Random();
 
     public Monstro(String nome) {
         this.nome = nome;
@@ -74,7 +77,8 @@ public class Monstro {
         this.fullVida = fullVida;
     }
 
-    public void ataqueSimples(Monstro alvo, int dano){
+
+    public void aplicarDano(Monstro alvo, int dano){
         int novaVida = alvo.getVida() - dano;
 
         if (novaVida < 0) {
@@ -89,7 +93,35 @@ public class Monstro {
         System.out.println("Vida do inimigo: " + monstroInimigo.getVida());
     }
 
+    public boolean acertarAtaque(int chance){
+        return random.nextInt(100) < chance;
+    }
 
+    public void usarAtaqueBasico(Monstro monstroUm, Monstro monstroDois, int chance){
+        System.out.println("\nO "+monstroUm.getNome()+" usou "+monstroUm.getAtaqueBase()+"!");
 
+        if (!acertarAtaque(chance)){
+            System.out.println("Mas o ataque errou!");
+            mostrarVida(monstroUm,monstroDois);
+        } else {
+            int dano = (int) (monstroUm.getDano() * monstroUm.getMultiplicadorBase());
+            aplicarDano(monstroDois, dano);
+            System.out.println("Ataque acertou! Dano causado: " + monstroUm.getDano());
+        }
+
+        monstroUm.mostrarVida(monstroUm,monstroDois);
+    }
+
+    public void usarAtaqueEspecial(Monstro monstroUm, Monstro monstroDois){
+        System.out.println("Usou ataque especial!");
+    }
+
+    public void fugir(){
+        if (random.nextInt(100)<50){
+            System.out.println("Você conseguiu fugir!");
+        } else {
+            System.out.println("Você tentou fugir... mas o destino não permite.");
+        }
+    }
 
 }

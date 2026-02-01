@@ -138,5 +138,23 @@ public class Paineis {
         System.out.println("======================================");
     }
 
+    public void painelDaLuta(Jogador jogador, Monstro monstroJogador) {
+        pausa(400);
+        System.out.println("----------------------------");
+        System.out.println("Sua vez!");
+        pausa(300);
+
+        System.out.println("[ 1 ] "+monstroJogador.getAtaqueBase());
+        pausa(200);
+        System.out.println("[ 2 ] "+monstroJogador.getAtaqueEspecial());
+        pausa(200);
+        System.out.println("[ 3 ] Usar Poção de HP (" + jogador.getPocaoHp() + ")");
+        pausa(200);
+        System.out.println("[ 4 ] Fugir");
+        pausa(300);
+    }
+
+
+
 
 }
