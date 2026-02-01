@@ -102,7 +102,6 @@ public class Monstro {
 
         if (!acertarAtaque(chance)){
             System.out.println("Mas o ataque errou!");
-            mostrarVida(monstroUm,monstroDois);
         } else {
             int dano = (int) (monstroUm.getDano() * monstroUm.getMultiplicadorBase());
             aplicarDano(monstroDois, dano);

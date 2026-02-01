@@ -143,8 +143,5 @@ public class LutaUm {
         } else {
             monstroInimigo.usarAtaqueEspecial(monstroInimigo,monstroJogador);
         }
-        //Não importa se aqui for o monstro jogador ou o monstro inimigo, isso é apenas para mostrar a vida dos monstros
-        monstroJogador.mostrarVida(monstroJogador, monstroInimigo);
-
     }
 }
