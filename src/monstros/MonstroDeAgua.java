@@ -13,4 +13,16 @@ public class MonstroDeAgua extends Monstro{
         this.ataqueEspecial = "Tsunami";
         this.multiplicadorEspecial = 1.25;
     }
+
+    @Override
+    public double receberDano(Monstro inimigo){
+        if (inimigo instanceof MonstroDeFogo){
+            return 1.15;
+        } else if (inimigo instanceof MonstroDeTerra){
+            return 0.9;
+        }
+        return multiplicadorBase; //Este daqui é o else, pode-se dizer
+    }
+
+
 }

@@ -88,9 +88,9 @@ public class Monstro {
         alvo.setVida(novaVida);
     }
 
-    public void mostrarVida(Monstro monstroJogador, Monstro monstroInimigo) {
-        System.out.println("\nVida do seu monstro: " + monstroJogador.getVida());
-        System.out.println("Vida do inimigo: " + monstroInimigo.getVida());
+    public void mostrarVida(Monstro monstroUm, Monstro monstroDois) {
+        System.out.println("\nVida do "+monstroUm.getNome()+": " + monstroUm.getVida());
+        System.out.println("Vida do "+monstroDois.getNome()+": " + monstroDois.getVida());
     }
 
     public boolean acertarAtaque(int chance){
@@ -103,9 +103,10 @@ public class Monstro {
         if (!acertarAtaque(chance)){
             System.out.println("Mas o ataque errou!");
         } else {
-            int dano = (int) (monstroUm.getDano() * monstroUm.getMultiplicadorBase());
+            double multiplicador = receberDano(monstroDois);
+            int dano = (int) (monstroUm.getDano() * multiplicador);
             aplicarDano(monstroDois, dano);
-            System.out.println("Ataque acertou! Dano causado: " + monstroUm.getDano());
+            System.out.println("Ataque acertou! Dano causado: " + dano);
         }
 
         monstroUm.mostrarVida(monstroUm,monstroDois);
@@ -121,6 +122,11 @@ public class Monstro {
         } else {
             System.out.println("Você tentou fugir... mas o destino não permite.");
         }
+    }
+
+    //Pega o aplicador de dano, podendo dar vantagem ou desvantagem
+    public double receberDano(Monstro inimigo) {
+        return 1.0;
     }
 
 }
