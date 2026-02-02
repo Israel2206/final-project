@@ -45,22 +45,20 @@ public class LutaSete {
             turnoDoJogador();
 
             if (monstroInimigo.getVida() <= 0) {
-                paineis.pausa(700);
-                System.out.println("\nVocê derrubou o último guardião!");
+                paineis.pausa(600);
+                System.out.println("\nVocê venceu a batalha!");
                 paineis.pausa(900);
 
-                System.out.println("O público entra em silêncio absoluto.");
-                paineis.pausa(800);
-                System.out.println("Todos sabem o que vem a seguir...");
-                paineis.pausa(1000);
-
                 System.out.println("Você recebeu +1 poção de HP!");
+                paineis.pausa(700);
                 jogador.setPocaoHp(jogador.getPocaoHp() + 1);
 
-                System.out.println("Seu monstro se recupera completamente.");
+                System.out.println("A Vida do seu " + monstroJogador.getNome() + " está cheia novamente!");
+                monstroJogador.setNivel(monstroJogador.getNivel()+1);
+                monstroJogador.atualizarStatus(monstroJogador.getNivel());
                 monstroJogador.setVida(monstroJogador.getFullVida());
                 paineis.pausa(1000);
-
+                paineis.mostrarAtualizacao(monstroJogador);
                 vitoria = true;
                 break;
             }

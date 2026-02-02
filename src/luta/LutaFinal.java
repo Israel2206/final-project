@@ -48,16 +48,20 @@ public class LutaFinal {
             turnoDoJogador();
 
             if (monstroInimigo.getVida() <= 0) {
-                paineis.pausa(1000);
-                System.out.println("\nO campeão cai de joelhos.");
-                paineis.pausa(1000);
+                paineis.pausa(600);
+                System.out.println("\nVocê venceu a batalha!");
+                paineis.pausa(900);
 
-                System.out.println("O silêncio domina a arena.");
+                System.out.println("Você recebeu +1 poção de HP!");
+                paineis.pausa(700);
+                jogador.setPocaoHp(jogador.getPocaoHp() + 1);
+
+                System.out.println("A Vida do seu " + monstroJogador.getNome() + " está cheia novamente!");
+                monstroJogador.setNivel(monstroJogador.getNivel()+1);
+                monstroJogador.atualizarStatus(monstroJogador.getNivel());
+                monstroJogador.setVida(monstroJogador.getFullVida());
                 paineis.pausa(1000);
-
-                System.out.println("A verdade finalmente venceu.");
-                paineis.pausa(1200);
-
+                paineis.mostrarAtualizacao(monstroJogador);
                 vitoria = true;
                 break;
             }

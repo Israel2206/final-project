@@ -49,18 +49,20 @@ public class LutaSeis {
             turnoJogador();
 
             if (monstroInimigo.getVida() <= 0) {
-                paineis.pausa(800);
-                System.out.println("\nVocê venceu.");
-                paineis.pausa(700);
-                System.out.println("Mas o silêncio da arena é pesado.");
+                paineis.pausa(600);
+                System.out.println("\nVocê venceu a batalha!");
                 paineis.pausa(900);
 
-                monstroJogador.setVida(monstroJogador.getFullVida());
+                System.out.println("Você recebeu +1 poção de HP!");
+                paineis.pausa(700);
                 jogador.setPocaoHp(jogador.getPocaoHp() + 1);
 
-                System.out.println("Seu monstro recupera as forças.");
+                System.out.println("A Vida do seu " + monstroJogador.getNome() + " está cheia novamente!");
+                monstroJogador.setNivel(monstroJogador.getNivel()+1);
+                monstroJogador.atualizarStatus(monstroJogador.getNivel());
+                monstroJogador.setVida(monstroJogador.getFullVida());
                 paineis.pausa(1000);
-
+                paineis.mostrarAtualizacao(monstroJogador);
                 vitoria = true;
                 break;
             }
