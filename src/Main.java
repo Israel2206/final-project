@@ -226,6 +226,32 @@ public class Main {
                             if (!lutaCinco.vitoria) {
                                 System.out.println("\n=== GAME OVER ===");
 
+                            } else {
+                                LutaSeis lutaSeis = new LutaSeis(jogador);
+
+                                lutaSeis.iniciarLutaSeis();
+
+                                if (!lutaSeis.vitoria){
+                                    System.out.println("\n=== GAME OVER ===");
+                                } else {
+                                    LutaSete lutaSete = new LutaSete(jogador);
+
+                                    lutaSete.iniciarLutaSete();
+
+                                    if (!lutaSete.vitoria) {
+                                        System.out.println("\n=== GAME OVER ===");
+                                    } else {
+                                        LutaFinal lutaFinal = new LutaFinal(jogador);
+
+                                        lutaFinal.iniciarLutaFinal();
+
+                                        if (!lutaFinal.vitoria) {
+                                            System.out.println("\n=== GAME OVER ===");
+                                        } else {
+                                            painel.painelLutaFinalDepois();
+                                        }
+                                    }
+                                }
                             }
                         }
                     }

@@ -80,7 +80,7 @@ public class lutaTutorial {
         }
     }
 
-    // ================= TURNOS =================
+
 
     private void turnoJogador() {
         int escolha = -1;

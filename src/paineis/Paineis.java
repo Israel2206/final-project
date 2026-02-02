@@ -440,6 +440,193 @@ public class Paineis {
         System.out.println("A quinta luta está prestes a começar.");
         pausa(1200);
     }
+    public void painelLutaSeis() {
+        pausa(800);
+        System.out.println("\n======================================");
+        System.out.println("        MENSAGEM DA ARENA");
+        System.out.println("======================================");
+        System.out.println();
+        pausa(900);
+
+        System.out.println("A arena já não vibra como antes.");
+        pausa(800);
+        System.out.println("Agora… ela observa.");
+        pausa(900);
+        System.out.println();
+
+        System.out.println("Você sente o peso de cada luta em seu corpo.");
+        pausa(800);
+        System.out.println("Cada vitória cobrou um preço.");
+        pausa(900);
+        System.out.println();
+
+        System.out.println("O público entende.");
+        pausa(700);
+        System.out.println("A partir daqui, só monstros de verdade permanecem.");
+        pausa(1000);
+        System.out.println();
+
+        System.out.println("Os portões da arena se abrem lentamente.");
+        pausa(800);
+        System.out.println("Não há anúncio.");
+        pausa(700);
+        System.out.println("Não há aviso.");
+        pausa(900);
+        System.out.println();
+
+        System.out.println("Apenas um inimigo surge.");
+        pausa(800);
+        System.out.println("E ele não veio testar você.");
+        pausa(900);
+        System.out.println();
+
+        System.out.println("Ele veio te impedir de chegar ao final.");
+        pausa(1200);
+        System.out.println();
+
+        System.out.println("Prepare-se.");
+        System.out.println("A sexta luta começa agora.");
+        pausa(1200);
+    }
+    public void painelLutaSete() {
+        pausa(800);
+        System.out.println("\n======================================");
+        System.out.println("        MENSAGEM DA ARENA");
+        System.out.println("======================================");
+        System.out.println();
+        pausa(900);
+
+        System.out.println("A arena está cheia.");
+        pausa(800);
+        System.out.println("Mas ninguém comemora.");
+        pausa(900);
+        System.out.println();
+
+        System.out.println("Você sente os olhares sobre você.");
+        pausa(800);
+        System.out.println("Alguns torcem.");
+        pausa(600);
+        System.out.println("Outros esperam sua queda.");
+        pausa(900);
+        System.out.println();
+
+        System.out.println("Todos sabem.");
+        pausa(800);
+        System.out.println("Depois dessa luta… não haverá retorno.");
+        pausa(1000);
+        System.out.println();
+
+        System.out.println("O portão se abre.");
+        pausa(800);
+        System.out.println("Seu próximo adversário já venceu muitos aqui.");
+        pausa(900);
+        System.out.println();
+
+        System.out.println("Ele para diante de você.");
+        pausa(800);
+        System.out.println("E não diz uma palavra.");
+        pausa(900);
+        System.out.println();
+
+        System.out.println("A luta que decide quem merece enfrentar o campeão começa agora.");
+        pausa(1200);
+    }
+    public void painelLutaFinalAntes() {
+        pausa(1000);
+        System.out.println("\n======================================");
+        System.out.println("        A GRANDE FINAL");
+        System.out.println("======================================");
+        System.out.println();
+        pausa(1200);
+
+        System.out.println("A arena está completamente lotada.");
+        pausa(900);
+        System.out.println("O público grita o nome do campeão.");
+        pausa(900);
+        System.out.println("O mesmo homem que você viu destruir seu pai.");
+        System.out.println();
+        pausa(1400);
+
+        System.out.println("As lembranças voltam com força.");
+        pausa(800);
+        System.out.println("Você era apenas uma criança.");
+        pausa(700);
+        System.out.println("Viu seu pai cair, humilhado, diante de todos.");
+        System.out.println();
+        pausa(1500);
+
+        System.out.println("O campeão ergue os braços.");
+        pausa(700);
+        System.out.println("O mesmo sorriso frio.");
+        pausa(700);
+        System.out.println("A mesma trapaça que ninguém teve coragem de denunciar.");
+        System.out.println();
+        pausa(1500);
+
+        System.out.println("Ele olha para você.");
+        pausa(800);
+        System.out.println("Reconhece seu rosto.");
+        pausa(800);
+        System.out.println("E pela primeira vez, perde o sorriso.");
+        System.out.println();
+        pausa(1500);
+
+        System.out.println("Não há como fugir.");
+        pausa(700);
+        System.out.println("Não há mais caminho de volta.");
+        pausa(700);
+        System.out.println("Essa luta decide tudo.");
+        System.out.println();
+        pausa(1200);
+
+        System.out.println("======================================");
+    }
+    public void painelLutaFinalDepois() {
+        pausa(1200);
+        System.out.println("\n======================================");
+        System.out.println("        O FIM DO TORNEIO");
+        System.out.println("======================================");
+        System.out.println();
+        pausa(1400);
+
+        System.out.println("O silêncio toma conta da arena.");
+        pausa(900);
+        System.out.println("O campeão está no chão.");
+        pausa(900);
+        System.out.println("Derrotado diante de todos.");
+        System.out.println();
+        pausa(1500);
+
+        System.out.println("O público demora a reagir.");
+        pausa(800);
+        System.out.println("Até que alguém começa a aplaudir.");
+        pausa(800);
+        System.out.println("E então todos acompanham.");
+        System.out.println();
+        pausa(1500);
+
+        System.out.println("Você não sente alegria.");
+        pausa(700);
+        System.out.println("Nem ódio.");
+        pausa(700);
+        System.out.println("Apenas alívio.");
+        System.out.println();
+        pausa(1400);
+
+        System.out.println("Seu pai não está ali para ver.");
+        pausa(800);
+        System.out.println("Mas pela primeira vez, seu nome é limpo.");
+        System.out.println();
+        pausa(1400);
+
+        System.out.println("O torneio chega ao fim.");
+        pausa(700);
+        System.out.println("E sua jornada também.");
+        System.out.println();
+        pausa(1200);
+
+        System.out.println("======================================");
+    }
 
 
 

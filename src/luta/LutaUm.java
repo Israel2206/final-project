@@ -35,10 +35,10 @@ public class LutaUm {
             this.monstroInimigo = new MonstroDeAr("Sky",1);
             this.jogadorInimigo = new Jogador("Axel", monstroInimigo);
         } else if (monstroAleatorio == 2){
-            this.monstroInimigo = new MonstroDeTerra("Rok",0);
+            this.monstroInimigo = new MonstroDeTerra("Rok",1);
             this.jogadorInimigo = new Jogador("Dante", monstroInimigo);
         } else {
-            this.monstroInimigo = new MonstroDeAgua("Nero",0);
+            this.monstroInimigo = new MonstroDeAgua("Nero",1);
             this.jogadorInimigo = new Jogador("Kai", monstroInimigo);
         }
     }

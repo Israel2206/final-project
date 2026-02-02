@@ -20,14 +20,14 @@ public class LutaCinco {
 
     private Scanner sc = new Scanner(System.in);
     private Random random = new Random();
-    private int chance = 70;
+    private int chance = 75;
 
     // Monstro de AR fixo na luta cinco
     public LutaCinco(Jogador jogador) {
         this.jogador = jogador;
         this.monstroJogador = jogador.getMonstro();
 
-        this.monstroInimigo = new MonstroDeAr("Aeros", 5);
+        this.monstroInimigo = new MonstroDeAr("Aeros", 6);
         this.jogadorInimigo = new Jogador("Venthar", monstroInimigo);
     }
 
@@ -79,7 +79,7 @@ public class LutaCinco {
         } while (monstroJogador.getVida() > 0 && monstroInimigo.getVida() > 0);
     }
 
-    // ================= TURNOS =================
+
 
     private void turnoDoJogador() {
         int escolha;
