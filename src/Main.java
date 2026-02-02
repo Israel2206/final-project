@@ -194,23 +194,32 @@ public class Main {
             LutaUm lutaUm = new LutaUm(jogador);
             lutaUm.iniciarLutaUm();
 
-            LutaDois lutaDois = new LutaDois(jogador);
-            lutaDois.iniciarLutaDois();
-
-            LutaTres lutaTres = new LutaTres(jogador);
-            lutaTres.iniciarLutaTres();
-
-            LutaQuatro lutaQuatro = new LutaQuatro(jogador);
-            lutaQuatro.iniciarLutaQuatro();
-
             if (!lutaUm.vitoria){
                 System.out.println("\n=== GAME OVER ===");
             }else {
                 LutaDois lutaDois = new LutaDois(jogador);
 
                 lutaDois.iniciarLutaDois();
+                if (!lutaDois.vitoria){
+                System.out.println("\n=== GAME OVER ===");
+                } else {
+                    LutaTres lutaTres = new LutaTres(jogador);
+
+                    lutaTres.iniciarLutaTres();
+                    if (lutaTres.vitoria){
+                        System.out.println("\n=== GAME OVER ===");
+                    }else {
+                        LutaQuatro lutaQuatro = new LutaQuatro(jogador);
+
+                        lutaQuatro.iniciarLutaQuatro();
+                        if (!lutaQuatro.vitoria){
+                            System.out.println("\n=== GAME OVER ===");
+
+                        }
+                    }
+
+                }
             }
         }
     }
 }
-// Breno Israel e Igor Franco
