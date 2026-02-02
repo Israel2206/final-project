@@ -20,14 +20,14 @@ public class LutaDois {
 
     private Scanner sc = new Scanner(System.in);
     private Random random = new Random();
-    private int chance = 70;
+    private int chance = 75;
 
     // Monstro de fogo fixo na luta dois
     public LutaDois(Jogador jogador) {
         this.jogador = jogador;
         this.monstroJogador = jogador.getMonstro();
 
-        this.monstroInimigo = new MonstroDeFogo("Combuster", 1);
+        this.monstroInimigo = new MonstroDeFogo("Combuster", 3);
         this.jogadorInimigo = new Jogador("Magman", monstroInimigo);
     }
 
@@ -81,7 +81,7 @@ public class LutaDois {
         } while (monstroJogador.getVida() > 0 && monstroInimigo.getVida() > 0);
     }
 
-    // ================= TURNOS =================
+
 
     private void turnoDoJogador() {
         int escolha;

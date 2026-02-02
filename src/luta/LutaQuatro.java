@@ -19,7 +19,7 @@ public class LutaQuatro {
 
     private Scanner sc = new Scanner(System.in);
     private Random random = new Random();
-    private int chance = 60;
+    private int chance = 75;
 
     public LutaQuatro(Jogador jogador) {
         this.jogador = jogador;
@@ -28,16 +28,16 @@ public class LutaQuatro {
         int sorteio = random.nextInt(4) + 1;
 
         if (sorteio == 1) {
-            monstroInimigo = new MonstroDeFogo("Blazer", 5);
+            monstroInimigo = new MonstroDeFogo("Blazer", 6);
             jogadorInimigo = new Jogador("Ignis", monstroInimigo);
         } else if (sorteio == 2) {
-            monstroInimigo = new MonstroDeAgua("Hydron", 4);
+            monstroInimigo = new MonstroDeAgua("Hydron", 6);
             jogadorInimigo = new Jogador("Aqua", monstroInimigo);
         } else if (sorteio == 3) {
-            monstroInimigo = new MonstroDeTerra("Terrak", 5);
+            monstroInimigo = new MonstroDeTerra("Terrak", 6);
             jogadorInimigo = new Jogador("Gron", monstroInimigo);
         } else {
-            monstroInimigo = new MonstroDeAr("Zeph", 4);
+            monstroInimigo = new MonstroDeAr("Zeph", 6);
             jogadorInimigo = new Jogador("Aeris", monstroInimigo);
         }
     }
