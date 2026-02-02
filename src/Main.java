@@ -197,10 +197,13 @@ public class Main {
 
             lutaUm.iniciarLutaUm();
 
-            LutaDois lutaDois = new LutaDois(jogador);
+            if (!lutaUm.vitoria){
+                System.out.println("\n=== GAME OVER ===");
+            }else {
+                LutaDois lutaDois = new LutaDois(jogador);
 
-            lutaDois.iniciarLutaDois();
-
+                lutaDois.iniciarLutaDois();
+            }
         }
     }
 }

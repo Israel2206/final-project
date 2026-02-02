@@ -107,11 +107,15 @@ public class LutaUm {
                 escolha = sc.nextInt();
                 sc.nextLine(); // limpa buffer
 
-                // esse if só funciona aqui!!!!!
+                // esses ifs só funciona aqui!!!!!
                 if (escolha == 3){
                     paineis.pausa(400);
                     jogador.usarPocao(jogador, monstroJogador);
                     paineis.pausa(600);
+                    continue;
+                } else if (escolha == 4) {
+                    paineis.pausa(500);
+                    monstroJogador.mostrarStatus(jogador, monstroJogador);
                     continue;
                 }
 
@@ -132,8 +136,7 @@ public class LutaUm {
         paineis.pausa(500);
         switch (escolha) {
             case 1 -> monstroJogador.usarAtaqueBasico(monstroJogador, monstroInimigo, chance);
-            case 2 -> monstroJogador.usarAtaqueEspecial(monstroJogador, monstroInimigo);
-            case 4 -> monstroJogador.fugir();
+            case 2 -> monstroJogador.usarAtaqueEspecial(monstroJogador, monstroInimigo, chance);
         }
     }
 
@@ -146,7 +149,7 @@ public class LutaUm {
         if (sorteDoMonstro <= 3){
             monstroInimigo.usarAtaqueBasico(monstroInimigo,monstroJogador,chance);
         } else {
-            monstroInimigo.usarAtaqueEspecial(monstroInimigo,monstroJogador);
+            monstroInimigo.usarAtaqueEspecial(monstroInimigo,monstroJogador,chance);
         }
     }
 }
