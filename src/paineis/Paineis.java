@@ -23,6 +23,7 @@ public class Paineis {
         System.out.println(">>> Aperte ENTER para começar <<<");
     }
 
+
     public void painelDeEscolherMonstro(){
         System.out.println("========================================");
         System.out.println("     ESCOLHA O SEU TIPO DE MONSTRO");
@@ -89,6 +90,138 @@ public class Paineis {
              * ele restaura o estado de interrupção da thread.*/
         }
     }
+    public void painelHistoriaInicial() {
+        pausa(1000);
+        System.out.println("======================================");
+        System.out.println("             MEMÓRIAS");
+        System.out.println("======================================");
+        System.out.println();
+        pausa(1200);
+
+        System.out.println("Ao entrar na arena você relembra do porque está aqui");
+        System.out.println("Você era pequeno quando entrou naquela arena.");
+        pausa(1000);
+        System.out.println("Não como lutador.");
+        pausa(700);
+        System.out.println("Mas como espectador da luta final.");
+        System.out.println();
+        pausa(1200);
+
+        System.out.println("As arquibancadas estavam cheias.");
+        pausa(900);
+        System.out.println("O público gritava.");
+        pausa(700);
+        System.out.println("Bandeiras tremulavam.");
+        System.out.println();
+        pausa(1200);
+
+        System.out.println("Era a luta pelo título.");
+        pausa(900);
+        System.out.println("Seu pai contra o próprio irmão.");
+        System.out.println();
+        pausa(1200);
+
+        System.out.println("No começo, tudo parecia justo.");
+        pausa(900);
+        System.out.println("Golpes limpos.");
+        pausa(700);
+        System.out.println("Regras sendo seguidas.");
+        System.out.println();
+        pausa(1200);
+
+        System.out.println("Até que você percebeu.");
+        pausa(900);
+        System.out.println("Movimentos estranhos.");
+        pausa(700);
+        System.out.println("Golpes que não deveriam ser possíveis.");
+        System.out.println();
+        pausa(1300);
+
+        System.out.println("Seu pai caiu uma vez.");
+        pausa(900);
+        System.out.println("Levantou.");
+        pausa(700);
+        System.out.println("Caiu de novo.");
+        System.out.println();
+        pausa(1200);
+
+        System.out.println("O público aplaudia o espetáculo.");
+        pausa(900);
+        System.out.println("Mas você via o que ninguém queria ver.");
+        System.out.println();
+        pausa(1200);
+
+        System.out.println("Quando a luta terminou, seu tio foi declarado vencedor.");
+        pausa(1100);
+        System.out.println("O título foi erguido.");
+        pausa(700);
+        System.out.println("A arena explodiu em aplausos.");
+        System.out.println();
+        pausa(1400);
+
+        System.out.println("Seu pai permaneceu no chão.");
+        pausa(900);
+        System.out.println("Derrotado.");
+        pausa(700);
+        System.out.println("Humilhado.");
+        System.out.println();
+        pausa(1300);
+
+        System.out.println("Seu tio se aproximou.");
+        pausa(900);
+        System.out.println("Não para ajudar.");
+        pausa(700);
+        System.out.println("Mas para falar.");
+        System.out.println();
+        pausa(1200);
+
+        System.out.println("\"Esse é o nível que você alcançou.\"");
+        pausa(900);
+        System.out.println("\"E esse é o limite do seu sangue.\"");
+        System.out.println();
+        pausa(1400);
+
+        System.out.println("Ele olhou para você.");
+        pausa(900);
+        System.out.println("Ainda criança.");
+        pausa(700);
+        System.out.println("Assistindo tudo da primeira fileira.");
+        System.out.println();
+        pausa(1300);
+
+        System.out.println("Seu pai nunca voltou a lutar depois daquela noite.");
+        pausa(1000);
+        System.out.println("E nunca voltou a ser o mesmo.");
+        System.out.println();
+        pausa(1200);
+
+        System.out.println("Anos se passaram.");
+        pausa(900);
+        System.out.println("Seu pai morreu.");
+        pausa(900);
+        System.out.println("E o nome do seu tio virou lenda. O dono do torneio desde então");
+        System.out.println();
+        System.out.println("E o do seu pai foi esquecido.");
+        pausa(1400);
+
+        System.out.println("Agora você está aqui.");
+        pausa(900);
+        System.out.println("Na mesma arena.");
+        pausa(800);
+        System.out.println("Diante do mesmo torneio.");
+        System.out.println();
+        pausa(1200);
+
+        System.out.println("Não para provar algo.");
+        pausa(800);
+        System.out.println("Mas para encerrar o que começou naquela noite.");
+        System.out.println();
+        pausa(1400);
+
+        System.out.println("======================================");
+        pausa(1000);
+        System.out.println(">>> Aperte ENTER para seguir seu caminho <<<");
+    }
 
     public void painelLutaUm() {
         pausa(800);
@@ -154,7 +287,7 @@ public class Paineis {
         pausa(200);
         System.out.println("[ 3 ] Usar Poção de HP (" + jogador.getPocaoHp() + ")");
         pausa(200);
-        System.out.println("[ 4 ] Fugir");
+        System.out.println("[ 4 ] Mostrar Status");
         pausa(300);
     }
     public void painelLutaDois() {
@@ -258,6 +391,54 @@ public class Paineis {
         pausa(1000);
 
         System.out.println("======================================");
+    }
+    public void painelLutaCinco() {
+        pausa(800);
+        System.out.println("\n======================================");
+        System.out.println("        MENSAGEM DA ARENA");
+        System.out.println("======================================");
+        System.out.println();
+        pausa(900);
+
+        System.out.println("O público se levanta após sua vitória.");
+        pausa(700);
+        System.out.println("Seu nome começa a ecoar pela arena.");
+        pausa(900);
+        System.out.println();
+
+        System.out.println("De repente, o vento muda.");
+        pausa(800);
+        System.out.println("Rajadas fortes atravessam a arena, levantando poeira e bandeiras.");
+        pausa(1000);
+        System.out.println();
+
+        System.out.println("O chão permanece firme...");
+        pausa(700);
+        System.out.println("Mas o ar ao redor parece instável.");
+        pausa(900);
+        System.out.println();
+
+        System.out.println("O público silencia por alguns segundos.");
+        pausa(800);
+        System.out.println("Então, gritos começam a surgir de todos os lados.");
+        pausa(900);
+        System.out.println();
+
+        System.out.println("Uma figura desce lentamente do alto da arena.");
+        pausa(800);
+        System.out.println("O vento gira ao seu redor como se obedecesse suas ordens.");
+        pausa(1000);
+        System.out.println();
+
+        System.out.println("Um Monstro do tipo AR entra em campo.");
+        pausa(700);
+        System.out.println("Rápido. Imprevisível. Letal.");
+        pausa(900);
+        System.out.println();
+
+        System.out.println("Prepare-se.");
+        System.out.println("A quinta luta está prestes a começar.");
+        pausa(1200);
     }
 
 
