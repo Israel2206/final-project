@@ -29,6 +29,8 @@ public class Monstro {
         this.multiplicadorBase = 1.0;
         this.ataqueEspecial = "Golpe Feroz";
         this.multiplicadorEspecial = 1.2;
+
+        atualizarStatus(nivel);
     }
 
     public int getNivel() {
@@ -133,6 +135,8 @@ public class Monstro {
             aplicarDano(monstroDois, dano);
             System.out.println("Ataque acertou! Dano causado: " + dano);
         }
+
+        monstroUm.mostrarVida(monstroUm,monstroDois);
     }
 
     public void mostrarStatus(Jogador jogador, Monstro monstro){
