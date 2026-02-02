@@ -32,6 +32,8 @@ public class LutaTres {
     }
 
     public void iniciarLutaTres() {
+        paineis.painelLutaTres();
+
         paineis.painelStatusBatalha(jogador, monstroInimigo, jogadorInimigo);
 
         System.out.println("\n======================");

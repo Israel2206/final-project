@@ -186,7 +186,79 @@ public class Paineis {
 
         System.out.println("======================================");
     }
+    public void painelLutaTres() {
+        pausa(800);
+        System.out.println("\n======================================");
+        System.out.println("        MENSAGEM DA ARENA");
+        System.out.println("======================================");
+        System.out.println();
+        pausa(900);
 
+        System.out.println("Parabéns por sua por sua segunda Vitoria!");
+        System.out.println("Você avança para a próxima área da arena.");
+        pausa(700);
+        System.out.println("O chão começa a tremer");
+        System.out.println();
+        pausa(1000);
+
+        System.out.println("O publico começa a clamar por seu adversário.");
+        pausa(700);
+        System.out.println("Você começa a sentir o clima mudar na arena");
+        System.out.println();
+        pausa(1000);
+
+        System.out.println("Um novo oponente aparece!");
+        pausa(700);
+        System.out.println("Se prepare para a proxima luta!");
+        System.out.println();
+        pausa(1000);
+
+        System.out.println("======================================");
+    }
+    public void painelLutaQuatro() {
+        pausa(800);
+        System.out.println("\n======================================");
+        System.out.println("        MENSAGEM DA ARENA");
+        System.out.println("======================================");
+        System.out.println();
+        pausa(900);
+
+        System.out.println("Três vitórias seguidas.");
+        pausa(700);
+        System.out.println("A arena começa a reconhecer seu nome.");
+        System.out.println();
+        pausa(1000);
+
+        System.out.println("Você avança para uma nova área.");
+        pausa(700);
+        System.out.println("Não há placas, nem avisos.");
+        System.out.println();
+        pausa(900);
+
+        System.out.println("O público murmura, confuso.");
+        pausa(700);
+        System.out.println("Ninguém sabe quem será o próximo adversário.");
+        System.out.println();
+        pausa(1000);
+
+        System.out.println("As luzes da arena piscam.");
+        pausa(700);
+        System.out.println("O portão se abre lentamente.");
+        System.out.println();
+        pausa(1000);
+
+        System.out.println("Um oponente surge.");
+        pausa(700);
+        System.out.println("Você percebe que desta vez não houve escolha.");
+        System.out.println();
+        pausa(900);
+
+        System.out.println("A luta começa agora.");
+        System.out.println();
+        pausa(1000);
+
+        System.out.println("======================================");
+    }
 
 
 

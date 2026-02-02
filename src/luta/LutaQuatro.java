@@ -43,6 +43,8 @@ public class LutaQuatro {
     }
 
     public void iniciarLutaQuatro() {
+        paineis.painelLutaQuatro();
+
         paineis.painelStatusBatalha(jogador, monstroInimigo, jogadorInimigo);
 
         System.out.println("\n======================");
