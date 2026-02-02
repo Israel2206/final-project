@@ -206,7 +206,7 @@ public class Main {
             if (!lutaUm.vitoria){
                 System.out.println("\n=== GAME OVER ===");
             }else {
-                LutaDois lutaDois = new LutaDois(jogador);
+                lutaDois = new LutaDois(jogador);
 
                 lutaDois.iniciarLutaDois();
             }
