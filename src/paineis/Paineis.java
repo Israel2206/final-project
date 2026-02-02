@@ -250,30 +250,42 @@ public class Paineis {
     }
 
     public void painelStatusBatalha(Jogador jogador, Monstro monstroInimigo, Jogador nomeInimigo) {
+        pausa(500);
         System.out.println("\n======================================");
         System.out.println("          STATUS DA BATALHA");
         System.out.println("======================================");
         System.out.println();
+        pausa(600);
 
         System.out.println(">>> JOGADOR");
+        pausa(300);
         System.out.println("Nome    : " + jogador.getNome());
+        pausa(200);
         System.out.println("Monstro : " + jogador.getMonstro().getNome()
                 + " (" + jogador.getMonstro().getTipo().toUpperCase() + ")");
+        pausa(200);
         System.out.println("Vida    : " + jogador.getMonstro().getVida());
         System.out.println();
+        pausa(500);
 
         System.out.println("--------------------------------------");
         System.out.println();
+        pausa(500);
 
         System.out.println(">>> INIMIGO");
+        pausa(300);
         System.out.println("Nome    : " + nomeInimigo.getNome());
+        pausa(200);
         System.out.println("Monstro : " + monstroInimigo.getNome()
                 + " (" + monstroInimigo.getTipo().toUpperCase() + ")");
+        pausa(200);
         System.out.println("Vida    : " + (int) monstroInimigo.getVida());
         System.out.println();
+        pausa(600);
 
         System.out.println("======================================");
     }
+
 
     public void painelDaLuta(Jogador jogador, Monstro monstroJogador) {
         pausa(400);

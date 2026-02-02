@@ -67,13 +67,6 @@ public class lutaTutorial {
                 paineis.pausa(700);
                 System.out.println("\nSeu monstro foi derrotado...");
                 paineis.pausa(900);
-
-                System.out.println("O inimigo nem parecia tão forte assim.");
-                paineis.pausa(800);
-                System.out.println("Talvez a diferença não estivesse na batalha...");
-                paineis.pausa(800);
-                System.out.println("Mas em quem estava tomando as decisões.");
-                paineis.pausa(1200);
                 vitoria=false;
                 break;
             }
@@ -87,7 +80,19 @@ public class lutaTutorial {
 
         while (true) {
             try {
-                paineis.painelDaLuta(jogador,monstroJogador);
+                paineis.pausa(400);
+                System.out.println("----------------------------");
+                System.out.println("Sua vez!");
+                paineis.pausa(300);
+
+                System.out.println("[ 1 ] "+monstroJogador.getAtaqueBase());
+                paineis.pausa(200);
+                System.out.println("[ 2 ] "+monstroJogador.getAtaqueEspecial());
+                paineis.pausa(200);
+                System.out.println("[ 3 ] Usar Poção de HP (" + jogador.getPocaoHp() + ")");
+                paineis.pausa(200);
+                System.out.println("[ 4 ] Fugir");
+                paineis.pausa(300);
 
                 System.out.print("Escolha uma ação: ");
 

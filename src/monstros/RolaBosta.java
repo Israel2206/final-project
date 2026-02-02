@@ -13,4 +13,9 @@ public class RolaBosta extends Monstro {
         this.ataqueEspecial = "Diarreia";
         this.multiplicadorEspecial = 1.45;
     }
+
+    @Override
+    public double receberDanoEspecial(Monstro inimigo) {
+        return multiplicadorEspecial;
+    }
 }

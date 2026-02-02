@@ -132,7 +132,7 @@ public class Main {
                         System.out.println("Parabéns você adquiriu um monstro raro! O poderoso Rola-Bosta!");
                         painel.pausa(1200);
 
-                        monstroEscolhido = new RolaBosta("Rola Bosta",1);
+                        monstroEscolhido = new RolaBosta("Rola Bosta",0);
 
                         jogador = new Jogador(nome, monstroEscolhido);
                         painel.menuPainel(jogador, monstroEscolhido);
@@ -187,6 +187,12 @@ public class Main {
         lutaTutorial.iniciar();
 
         if (!lutaTutorial.vitoria){
+            System.out.println("O inimigo nem parecia tão forte assim.");
+            painel.pausa(800);
+            System.out.println("Talvez a diferença não estivesse na batalha...");
+            painel.pausa(800);
+            System.out.println("Mas em quem estava tomando as decisões.");
+            painel.pausa(1200);
             System.out.println("\n=== GAME OVER ===");
         } else {
 
