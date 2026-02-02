@@ -81,7 +81,7 @@ public class Paineis {
 
     //Adicionando os métodos de dar uma pausa aqui, pois não tem um lugar melhor
     public void pausa(int millis) {
-        //millis = 0; //isso é caso formos testar o código
+        millis = 0; //isso é caso formos testar o código
         try {
             Thread.sleep(millis);
         } catch (InterruptedException e) {
@@ -453,6 +453,9 @@ public class Paineis {
         pausa(1200);
     }
 
-
+    public void mostrarAtualizacao(Monstro monstro){
+        System.out.println("HP atualizado: "+monstro.getFullVida());
+        System.out.println("Dano Atualizado: "+monstro.getDano());
+    }
 
 }

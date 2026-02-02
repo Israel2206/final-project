@@ -52,20 +52,38 @@ public class LutaQuatro {
         System.out.println("======================\n");
 
         do {
+            paineis.pausa(400);
             turnoDoJogador();
+            paineis.pausa(500);
 
             if (monstroInimigo.getVida() <= 0) {
+                paineis.pausa(600);
                 System.out.println("\nVocê venceu a batalha!");
+                paineis.pausa(900);
+
+                System.out.println("Você recebeu +1 poção de HP!");
+                paineis.pausa(700);
                 jogador.setPocaoHp(jogador.getPocaoHp() + 1);
+
+                System.out.println("A Vida do seu " + monstroJogador.getNome() + " está cheia novamente!");
+                monstroJogador.setNivel(monstroJogador.getNivel()+1);
+                monstroJogador.atualizarStatus(monstroJogador.getNivel());
                 monstroJogador.setVida(monstroJogador.getFullVida());
+                paineis.pausa(1000);
+                paineis.mostrarAtualizacao(monstroJogador);
                 vitoria = true;
                 break;
             }
 
+            paineis.pausa(400);
             turnoInimigo();
+            paineis.pausa(500);
 
             if (monstroJogador.getVida() <= 0) {
+                paineis.pausa(700);
                 System.out.println("\nSeu monstro foi derrotado...");
+                paineis.pausa(1000);
+
                 vitoria = false;
                 break;
             }

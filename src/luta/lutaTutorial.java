@@ -55,6 +55,7 @@ public class lutaTutorial {
                 monstroJogador.setNivel(monstroJogador.getNivel()+1);
                 monstroJogador.atualizarStatus(monstroJogador.getNivel());
                 monstroJogador.setVida(monstroJogador.getFullVida());
+                paineis.mostrarAtualizacao(monstroJogador);
                 paineis.pausa(1000);
                 vitoria = true;
                 break;

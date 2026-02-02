@@ -67,6 +67,7 @@ public class LutaUm {
                 monstroJogador.atualizarStatus(monstroJogador.getNivel());
                 monstroJogador.setVida(monstroJogador.getFullVida());
                 paineis.pausa(1000);
+                paineis.mostrarAtualizacao(monstroJogador);
                 vitoria = true;
                 break;
             }
