@@ -189,6 +189,10 @@ public class Main {
         if (!lutaTutorial.vitoria){
             System.out.println("\n=== GAME OVER ===");
         } else {
+
+            painel.painelHistoriaInicial();
+            sc.nextLine();
+
             painel.painelLutaUm(); // chama as lutas
 
             LutaUm lutaUm = new LutaUm(jogador);
@@ -206,7 +210,7 @@ public class Main {
                     LutaTres lutaTres = new LutaTres(jogador);
 
                     lutaTres.iniciarLutaTres();
-                    if (lutaTres.vitoria){
+                    if (!lutaTres.vitoria){
                         System.out.println("\n=== GAME OVER ===");
                     }else {
                         LutaQuatro lutaQuatro = new LutaQuatro(jogador);
@@ -214,6 +218,15 @@ public class Main {
                         lutaQuatro.iniciarLutaQuatro();
                         if (!lutaQuatro.vitoria){
                             System.out.println("\n=== GAME OVER ===");
+                        } else {
+                            LutaCinco lutaCinco = new LutaCinco(jogador);
+
+                            lutaCinco.iniciarLutaCinco();
+
+                            if (!lutaCinco.vitoria) {
+                                System.out.println("\n=== GAME OVER ===");
+
+                            }
                         }
                     }
 
