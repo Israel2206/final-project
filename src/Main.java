@@ -1,3 +1,4 @@
+import luta.LutaDois;
 import luta.LutaUm;
 import luta.lutaTutorial;
 import monstros.*;
@@ -196,7 +197,9 @@ public class Main {
 
             lutaUm.iniciarLutaUm();
 
+            LutaDois lutaDois = new LutaDois(jogador);
 
+            lutaDois.iniciarLutaDois();
 
         }
     }

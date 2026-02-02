@@ -90,7 +90,7 @@ public class lutaTutorial {
                 System.out.print("Escolha uma ação: ");
 
                 escolha = sc.nextInt();
-                sc.nextLine(); // limpa buffer
+                sc.nextLine(); // pega espaço vazio
 
                 // esse if só funciona aqui!!!!!
                 if (escolha == 3){
