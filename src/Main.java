@@ -203,6 +203,13 @@ public class Main {
             LutaQuatro lutaQuatro = new LutaQuatro(jogador);
             lutaQuatro.iniciarLutaQuatro();
 
+            if (!lutaUm.vitoria){
+                System.out.println("\n=== GAME OVER ===");
+            }else {
+                LutaDois lutaDois = new LutaDois(jogador);
+
+                lutaDois.iniciarLutaDois();
+            }
         }
     }
 }

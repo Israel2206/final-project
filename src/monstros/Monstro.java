@@ -1,6 +1,6 @@
 package monstros;
 
-import paineis.Paineis;
+import jogador.Jogador;
 
 import java.util.Random;
 
@@ -122,21 +122,34 @@ public class Monstro {
         monstroUm.mostrarVida(monstroUm,monstroDois);
     }
 
-    public void usarAtaqueEspecial(Monstro monstroUm, Monstro monstroDois){
-        System.out.println("Usou ataque especial!");
+    public void usarAtaqueEspecial(Monstro monstroUm, Monstro monstroDois, int chance){
+        System.out.println("\nO "+monstroUm.getNome()+" usou "+monstroUm.getAtaqueEspecial()+"!");
+
+        if (!acertarAtaque(chance)){
+            System.out.println("Mas o ataque errou!");
+        } else {
+            double multiplicador = receberDano(monstroDois);
+            int dano = (int) (monstroUm.getDano() * multiplicador);
+            aplicarDano(monstroDois, dano);
+            System.out.println("Ataque acertou! Dano causado: " + dano);
+        }
     }
 
-    public void fugir(){
-        if (random.nextInt(100)<50){
-            System.out.println("Você conseguiu fugir!");
-        } else {
-            System.out.println("Você tentou fugir... mas o destino não permite.");
-        }
+    public void mostrarStatus(Jogador jogador, Monstro monstro){
+        System.out.println("=== Status ===");
+        System.out.println("Jogador: "+jogador.getNome()+"\n");
+        System.out.println("Monstro: "+monstro.nome);
+        System.out.println("HP: "+monstro.getVida());
+        System.out.println("Dano: "+monstro.getDano());
     }
 
     //Pega o aplicador de dano, podendo dar vantagem ou desvantagem
     public double receberDano(Monstro inimigo) {
         return 1.0;
+    }
+
+    public double receberDanoEspecial(Jogador jogador, Monstro monstro){
+        return 1.15;
     }
 
     //nome auto explicativo!!!!
@@ -150,6 +163,3 @@ public class Monstro {
         setDano(dano);
     }
 }
-
-//      System.out.println("Vida atualizada: "+getFullVida());
-//      System.out.println("Dano atualizado: "+getDano());

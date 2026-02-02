@@ -97,6 +97,10 @@ public class LutaDois {
                     jogador.usarPocao(jogador, monstroJogador);
                     paineis.pausa(600);
                     continue;
+                } else if (escolha == 4){
+                    paineis.pausa(500);
+                    monstroJogador.mostrarStatus(jogador, monstroJogador);
+                    continue;
                 }
 
                 if (escolha >= 1 && escolha <= 4) {
@@ -116,8 +120,7 @@ public class LutaDois {
         paineis.pausa(500);
         switch (escolha) {
             case 1 -> monstroJogador.usarAtaqueBasico(monstroJogador, monstroInimigo, chance);
-            case 2 -> monstroJogador.usarAtaqueEspecial(monstroJogador, monstroInimigo);
-            case 4 -> monstroJogador.fugir();
+            case 2 -> monstroJogador.usarAtaqueEspecial(monstroJogador, monstroInimigo, chance);
         }
     }
 
@@ -130,7 +133,7 @@ public class LutaDois {
         if (sorteDoMonstro <= 3) {
             monstroInimigo.usarAtaqueBasico(monstroInimigo, monstroJogador, chance);
         } else {
-            monstroInimigo.usarAtaqueEspecial(monstroInimigo, monstroJogador);
+            monstroInimigo.usarAtaqueEspecial(monstroInimigo, monstroJogador, chance);
         }
     }
 }
