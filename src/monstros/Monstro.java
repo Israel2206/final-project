@@ -14,10 +14,13 @@ public class Monstro {
     protected double multiplicadorBase;
     protected String ataqueEspecial;
     protected double multiplicadorEspecial;
+    protected int nivel;
+
     private Random random = new Random();
 
-    public Monstro(String nome) {
+    public Monstro(String nome, int nivel) {
         this.nome = nome;
+        this.nivel = nivel;
         this.tipo = "comum";
         this.dano = 10;
         this.vida = 30;
@@ -129,4 +132,13 @@ public class Monstro {
         return 1.0;
     }
 
+    //nome auto explicativo!!!!
+    public void atualizarStatus(int nivel){
+        double nivelVida = nivel/10; // nivel = 1 vira 0.1
+
+        int vida = (int) (getFullVida() * (1 + nivelVida));
+
+        setFullVida(vida);
+
+    }
 }

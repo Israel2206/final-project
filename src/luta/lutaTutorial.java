@@ -24,7 +24,7 @@ public class lutaTutorial {
         this.monstroJogador = jogador.getMonstro();
 
         // Monstro inimigo do tutorial (simples e fixo)
-        this.monstroInimigo = new Monstro("Slime Selvagem");
+        this.monstroInimigo = new Monstro("Slime Selvagem",1);
         this.monstroInimigo.setVida(25);
         this.monstroInimigo.setDano(8);
     }

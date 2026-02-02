@@ -2,8 +2,8 @@ package monstros;
 
 public class MonstroDeTerra  extends Monstro {
 
-    public MonstroDeTerra(String nome) {
-        super(nome);
+    public MonstroDeTerra(String nome, int nivel) {
+        super(nome, nivel);
         this.tipo = "terra";
         this.dano = 13;
         this.vida = 35;

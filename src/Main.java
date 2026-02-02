@@ -45,7 +45,7 @@ public class Main {
                     System.out.print("Dê um apelido para ele(a):");
                     String apelido = sc.nextLine();
 
-                    monstroEscolhido = new MonstroDeAgua(apelido);
+                    monstroEscolhido = new MonstroDeAgua(apelido,1);
 
                     jogador = new Jogador(nome, monstroEscolhido);
                     painel.menuPainel(jogador, monstroEscolhido);
@@ -56,7 +56,7 @@ public class Main {
                     System.out.print("Dê um apelido para ele(a):");
                     String apelido = sc.nextLine();
 
-                    monstroEscolhido = new MonstroDeFogo(apelido);
+                    monstroEscolhido = new MonstroDeFogo(apelido,1);
 
                     jogador = new Jogador(nome, monstroEscolhido);
                     painel.menuPainel(jogador, monstroEscolhido);
@@ -67,7 +67,7 @@ public class Main {
                     System.out.print("Dê um apelido para ele(a):");
                     String apelido = sc.nextLine();
 
-                    monstroEscolhido = new MonstroDeTerra(apelido);
+                    monstroEscolhido = new MonstroDeTerra(apelido,1);
 
                     jogador = new Jogador(nome, monstroEscolhido);
                     painel.menuPainel(jogador, monstroEscolhido);
@@ -78,7 +78,7 @@ public class Main {
                     System.out.print("Dê um apelido para ele(a):");
                     String apelido = sc.nextLine();
 
-                    monstroEscolhido = new MonstroDeAr(apelido);
+                    monstroEscolhido = new MonstroDeAr(apelido,1);
 
                     jogador = new Jogador(nome, monstroEscolhido);
                     painel.menuPainel(jogador, monstroEscolhido);
@@ -91,7 +91,7 @@ public class Main {
                         System.out.print("Dê um apelido para ele(a):");
                         String apelido = sc.nextLine();
 
-                        monstroEscolhido= new MonstroDeAgua(apelido);
+                        monstroEscolhido= new MonstroDeAgua(apelido,1);
 
                         jogador = new Jogador(nome, monstroEscolhido);
                         painel.menuPainel(jogador, monstroEscolhido);
@@ -102,7 +102,7 @@ public class Main {
                         System.out.print("Dê um apelido para ele(a):");
                         String apelido = sc.nextLine();
 
-                        monstroEscolhido = new MonstroDeFogo(apelido);
+                        monstroEscolhido = new MonstroDeFogo(apelido,1);
 
                         jogador = new Jogador(nome, monstroEscolhido);
                         painel.menuPainel(jogador, monstroEscolhido);
@@ -113,7 +113,7 @@ public class Main {
                         System.out.print("Dê um apelido para ele(a):");
                         String apelido = sc.nextLine();
 
-                        monstroEscolhido = new MonstroDeTerra(apelido);
+                        monstroEscolhido = new MonstroDeTerra(apelido,1);
 
                         jogador = new Jogador(nome, monstroEscolhido);
                         painel.menuPainel(jogador, monstroEscolhido);
@@ -124,7 +124,7 @@ public class Main {
                         System.out.print("Dê um apelido para ele(a):");
                         String apelido = sc.nextLine();
 
-                        monstroEscolhido = new MonstroDeAr(apelido);
+                        monstroEscolhido = new MonstroDeAr(apelido,1);
 
                         jogador = new Jogador(nome, monstroEscolhido);
                         painel.menuPainel(jogador, monstroEscolhido);
@@ -133,7 +133,7 @@ public class Main {
                         System.out.println("Parabéns você adquiriu um monstro raro! O poderoso Rola-Bosta!");
                         painel.pausa(1200);
 
-                        monstroEscolhido = new RolaBosta("Rola Bosta");
+                        monstroEscolhido = new RolaBosta("Rola Bosta",1);
 
                         jogador = new Jogador(nome, monstroEscolhido);
                         painel.menuPainel(jogador, monstroEscolhido);

@@ -2,8 +2,8 @@ package monstros;
 
 public class RolaBosta extends Monstro {
 
-    public RolaBosta(String nome) {
-        super(nome);
+    public RolaBosta(String nome, int nivel) {
+        super(nome, nivel);
         this.tipo = "Bosta";
         this.dano = 7;
         this.vida = 45;

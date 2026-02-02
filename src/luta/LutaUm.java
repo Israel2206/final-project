@@ -32,13 +32,13 @@ public class LutaUm {
         //Monstros dos inimigos vão ser 3 aleatórios
         int monstroAleatorio = random.nextInt(3)+1;
         if (monstroAleatorio == 1){
-            this.monstroInimigo = new MonstroDeAr("Sky");
+            this.monstroInimigo = new MonstroDeAr("Sky",2);
             this.jogadorInimigo = new Jogador("Axel", monstroInimigo);
         } else if (monstroAleatorio == 2){
-            this.monstroInimigo = new MonstroDeTerra("Rok");
+            this.monstroInimigo = new MonstroDeTerra("Rok",2);
             this.jogadorInimigo = new Jogador("Dante", monstroInimigo);
         } else {
-            this.monstroInimigo = new MonstroDeAgua("Nero");
+            this.monstroInimigo = new MonstroDeAgua("Nero",2);
             this.jogadorInimigo = new Jogador("Kai", monstroInimigo);
         }
     }
