@@ -28,10 +28,10 @@ public class LutaSeis {
         int tipo = random.nextInt(4) + 1;
 
         switch (tipo) {
-            case 1 -> monstroInimigo = new MonstroDeFogo("Ignivar", 6);
-            case 2 -> monstroInimigo = new MonstroDeAgua("Marvolth", 6);
-            case 3 -> monstroInimigo = new MonstroDeTerra("Gravorn", 6);
-            default -> monstroInimigo = new MonstroDeAr("Aeris", 6);
+            case 1 -> monstroInimigo = new MonstroDeFogo("Ignivar", 9);
+            case 2 -> monstroInimigo = new MonstroDeAgua("Marvolth", 9);
+            case 3 -> monstroInimigo = new MonstroDeTerra("Gravorn", 9);
+            default -> monstroInimigo = new MonstroDeAr("Aeris", 9);
         }
 
         jogadorInimigo = new Jogador("Desafiante da Arena", monstroInimigo);

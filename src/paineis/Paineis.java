@@ -625,6 +625,8 @@ public class Paineis {
         System.out.println();
         pausa(1400);
 
+        System.out.println("Você colocou um ponto final na jornada maligna do seu tio.");
+        pausa(800);
         System.out.println("Seu pai não está ali para ver.");
         pausa(800);
         System.out.println("Mas pela primeira vez, seu nome é limpo.");
@@ -636,8 +638,18 @@ public class Paineis {
         System.out.println("E sua jornada também.");
         System.out.println();
         pausa(1200);
+        System.out.println("Parabéns!! Você é o novo campeão do grande torneio!!");
+        System.out.println();
+        pausa(1200);
 
         System.out.println("======================================");
+        System.out.println("Design de níveis: Breno Israel e Igor Franco");
+        System.out.println("Metodos Especificos: Breno Israel");
+        System.out.println("Roteiro: Igor Franco");
+        System.out.println("Programação: Breno Israel e Igor Franco");
+        System.out.println("Projeto final desenvolvido para o curso de JAVA");
+        System.out.println("Docente Résponsavel: Neidson Sampaio");
+        System.out.println("Apoio: Kid Bengala, João do pão, BBB26, PT");
     }
 
     public void mostrarAtualizacao(Monstro monstro){

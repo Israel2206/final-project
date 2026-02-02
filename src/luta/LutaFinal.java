@@ -30,7 +30,7 @@ public class LutaFinal {
         this.monstroJogador = jogador.getMonstro();
 
         // O TIO — CAMPEÃO
-        this.monstroInimigo = new MonstroDeFogo("Seath, o Grande Dragão Descamado", 10);
+        this.monstroInimigo = new MonstroDeFogo("Seath, o Grande Dragão Descamado", 15);
         this.jogadorInimigo = new Jogador("Daemon, o Campeão", monstroInimigo);
     }
 
