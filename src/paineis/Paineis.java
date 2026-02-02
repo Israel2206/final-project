@@ -15,7 +15,7 @@ public class Paineis {
         System.out.println("Apenas os mais fortes chegam ao final.");
         System.out.println();
         pausa(1200);
-        System.out.println("Prepare-se para enfrentar 10 chefes");
+        System.out.println("Prepare-se para enfrentar 5 chefes");
         pausa(700);
         System.out.println("E provar que você é o verdadeiro campeão.");
         System.out.println();
@@ -153,6 +153,34 @@ public class Paineis {
         pausa(200);
         System.out.println("[ 4 ] Fugir");
         pausa(300);
+    }
+    public void painelLutaDois() {
+        pausa(800);
+        System.out.println("\n======================================");
+        System.out.println("        MENSAGEM DA ARENA");
+        System.out.println("======================================");
+        System.out.println();
+        pausa(900);
+
+        System.out.println("Você avança para a próxima área da arena.");
+        pausa(700);
+        System.out.println("O chão começa a esquentar sob seus pés.");
+        System.out.println();
+        pausa(1000);
+
+        System.out.println("Chamas surgem ao redor do campo de batalha.");
+        pausa(700);
+        System.out.println("O ar fica pesado e difícil de respirar.");
+        System.out.println();
+        pausa(1000);
+
+        System.out.println("Do meio do fogo, um novo oponente aparece.");
+        pausa(700);
+        System.out.println("Um monstro envolto em chamas encara você sem medo.");
+        System.out.println();
+        pausa(1000);
+
+        System.out.println("======================================");
     }
 
 
