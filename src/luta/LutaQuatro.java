@@ -19,47 +19,30 @@ public class LutaQuatro {
 
     private Scanner sc = new Scanner(System.in);
     private Random random = new Random();
-    private int chance = 55;
+    private int chance = 60;
 
-    // Construtor
     public LutaQuatro(Jogador jogador) {
         this.jogador = jogador;
         this.monstroJogador = jogador.getMonstro();
 
         int sorteio = random.nextInt(4) + 1;
 
-        switch (sorteio) {
-            case 1 -> {
-                monstroInimigo = new MonstroDeAgua("Hydron", 7);
-                jogadorInimigo = new Jogador("Aqua", monstroInimigo);
-            }
-            case 2 -> {
-                monstroInimigo = new MonstroDeFogo("Pyrox", 7);
-                jogadorInimigo = new Jogador("Ignis", monstroInimigo);
-            }
-            case 3 -> {
-                monstroInimigo = new MonstroDeTerra("Coloss", 7);
-                jogadorInimigo = new Jogador("Gael", monstroInimigo);
-            }
-            default -> {
-                monstroInimigo = new MonstroDeAr("Zephy", 7);
-                jogadorInimigo = new Jogador("Aeris", monstroInimigo);
-            }
+        if (sorteio == 1) {
+            monstroInimigo = new MonstroDeFogo("Blazer", 4);
+            jogadorInimigo = new Jogador("Ignis", monstroInimigo);
+        } else if (sorteio == 2) {
+            monstroInimigo = new MonstroDeAgua("Hydron", 4);
+            jogadorInimigo = new Jogador("Aqua", monstroInimigo);
+        } else if (sorteio == 3) {
+            monstroInimigo = new MonstroDeTerra("Terrak", 4);
+            jogadorInimigo = new Jogador("Gron", monstroInimigo);
+        } else {
+            monstroInimigo = new MonstroDeAr("Zeph", 4);
+            jogadorInimigo = new Jogador("Aeris", monstroInimigo);
         }
     }
 
     public void iniciarLutaQuatro() {
-
-        paineis.pausa(800);
-        System.out.println("\n======================================");
-        System.out.println("\nA arena reage à presença do próximo lutador.");
-        paineis.pausa(700);
-        System.out.println("O ambiente muda diante dos seus olhos.");
-        paineis.pausa(700);
-        System.out.println("Você não sabe o que vem pela frente.\n");
-        System.out.println("======================================\n");
-        paineis.pausa(900);
-
         paineis.painelStatusBatalha(jogador, monstroInimigo, jogadorInimigo);
 
         System.out.println("\n======================");
@@ -70,21 +53,9 @@ public class LutaQuatro {
             turnoDoJogador();
 
             if (monstroInimigo.getVida() <= 0) {
-                paineis.pausa(600);
-                System.out.println("\nVitória!");
-                paineis.pausa(700);
-
-                System.out.println("A plateia começa a reconhecer seu nome.");
-                paineis.pausa(700);
-
-                System.out.println("Você recebeu +1 poção de HP!");
+                System.out.println("\nVocê venceu a batalha!");
                 jogador.setPocaoHp(jogador.getPocaoHp() + 1);
-                paineis.pausa(700);
-
                 monstroJogador.setVida(monstroJogador.getFullVida());
-                System.out.println("Seu monstro recuperou toda a vida!");
-                paineis.pausa(1000);
-
                 vitoria = true;
                 break;
             }
@@ -92,23 +63,13 @@ public class LutaQuatro {
             turnoInimigo();
 
             if (monstroJogador.getVida() <= 0) {
-                paineis.pausa(700);
-                System.out.println("\nDerrota...");
-                paineis.pausa(900);
-
-                System.out.println("No torneio, imprevisibilidade é tudo.");
-                paineis.pausa(900);
-                System.out.println("Nem sempre a força vence.");
-                paineis.pausa(1200);
-
+                System.out.println("\nSeu monstro foi derrotado...");
                 vitoria = false;
                 break;
             }
 
         } while (monstroJogador.getVida() > 0 && monstroInimigo.getVida() > 0);
     }
-
-    // ================= TURNOS =================
 
     private void turnoDoJogador() {
         int escolha;
@@ -123,11 +84,13 @@ public class LutaQuatro {
 
                 if (escolha == 3) {
                     jogador.usarPocao(jogador, monstroJogador);
-                    paineis.pausa(600);
+                    continue;
+                } else if (escolha == 4) {
+                    monstroJogador.mostrarStatus(jogador, monstroJogador);
                     continue;
                 }
 
-                if (escolha >= 1 && escolha <= 4) {
+                if (escolha == 1 || escolha == 2) {
                     break;
                 } else {
                     System.out.println("Opção inválida!");
@@ -135,28 +98,23 @@ public class LutaQuatro {
 
             } catch (InputMismatchException e) {
                 sc.nextLine();
-                System.out.println("Digite apenas números.");
+                System.out.println("Entrada inválida!");
             }
         }
 
-        paineis.pausa(400);
         switch (escolha) {
             case 1 -> monstroJogador.usarAtaqueBasico(monstroJogador, monstroInimigo, chance);
-            case 2 -> monstroJogador.usarAtaqueEspecial(monstroJogador, monstroInimigo);
-            case 4 -> monstroJogador.fugir();
+            case 2 -> monstroJogador.usarAtaqueEspecial(monstroJogador, monstroInimigo, chance);
         }
     }
 
     private void turnoInimigo() {
-        paineis.pausa(600);
         System.out.println("\nO " + monstroInimigo.getNome() + " ataca!");
-        paineis.pausa(700);
 
-        int sorte = random.nextInt(4) + 1;
-        if (sorte <= 2) {
-            monstroInimigo.usarAtaqueEspecial(monstroInimigo, monstroJogador);
-        } else {
+        if (random.nextBoolean()) {
             monstroInimigo.usarAtaqueBasico(monstroInimigo, monstroJogador, chance);
+        } else {
+            monstroInimigo.usarAtaqueEspecial(monstroInimigo, monstroJogador, chance);
         }
     }
 }

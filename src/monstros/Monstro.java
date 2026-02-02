@@ -162,4 +162,7 @@ public class Monstro {
         int dano = (int) (getDano() * (1 + porcentagem));
         setDano(dano);
     }
+
+    public void usarAtaqueEspecial(Monstro monstroJogador, Monstro monstroInimigo) {
+    }
 }
