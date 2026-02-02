@@ -128,7 +128,7 @@ public class Monstro {
         if (!acertarAtaque(chance)){
             System.out.println("Mas o ataque errou!");
         } else {
-            double multiplicador = receberDano(monstroDois);
+            double multiplicador = receberDanoEspecial(monstroDois);
             int dano = (int) (monstroUm.getDano() * multiplicador);
             aplicarDano(monstroDois, dano);
             System.out.println("Ataque acertou! Dano causado: " + dano);
@@ -148,7 +148,7 @@ public class Monstro {
         return 1.0;
     }
 
-    public double receberDanoEspecial(Jogador jogador, Monstro monstro){
+    public double receberDanoEspecial(Monstro inimigo){
         return 1.15;
     }
 
@@ -163,6 +163,4 @@ public class Monstro {
         setDano(dano);
     }
 
-    public void usarAtaqueEspecial(Monstro monstroJogador, Monstro monstroInimigo) {
-    }
 }

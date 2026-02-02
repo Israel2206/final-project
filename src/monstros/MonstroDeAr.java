@@ -23,4 +23,14 @@ public class MonstroDeAr extends Monstro{
         }
         return multiplicadorBase; //Este daqui é o else, pode-se dizer
     }
+
+    @Override
+    public double receberDanoEspecial(Monstro inimigo) {
+        if (inimigo instanceof MonstroDeTerra){
+            return 1.4;
+        } else if (inimigo instanceof MonstroDeFogo){
+            return 1.1;
+        }
+        return multiplicadorEspecial;
+    }
 }
