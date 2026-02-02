@@ -27,7 +27,7 @@ public class LutaCinco {
         this.jogador = jogador;
         this.monstroJogador = jogador.getMonstro();
 
-        this.monstroInimigo = new MonstroDeAr("Aeros", 6);
+        this.monstroInimigo = new MonstroDeAr("Aeros", 8);
         this.jogadorInimigo = new Jogador("Venthar", monstroInimigo);
     }
 

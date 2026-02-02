@@ -28,7 +28,7 @@ public class LutaSete {
         this.monstroJogador = jogador.getMonstro();
 
 
-        this.monstroInimigo = new MonstroDeTerra("Golém Colossal", 8);
+        this.monstroInimigo = new MonstroDeTerra("Golém Colossal", 10);
         this.jogadorInimigo = new Jogador("Carrasco Gwyn", monstroInimigo);
     }
 
