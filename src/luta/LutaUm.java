@@ -32,14 +32,17 @@ public class LutaUm {
         //Monstros dos inimigos vão ser 3 aleatórios
         int monstroAleatorio = random.nextInt(3)+1;
         if (monstroAleatorio == 1){
-            this.monstroInimigo = new MonstroDeAr("Sky",2);
+            this.monstroInimigo = new MonstroDeAr("Sky",0);
             this.jogadorInimigo = new Jogador("Axel", monstroInimigo);
+            monstroInimigo.atualizarStatus(monstroInimigo.getNivel());
         } else if (monstroAleatorio == 2){
-            this.monstroInimigo = new MonstroDeTerra("Rok",2);
+            this.monstroInimigo = new MonstroDeTerra("Rok",0);
             this.jogadorInimigo = new Jogador("Dante", monstroInimigo);
+            monstroInimigo.atualizarStatus(monstroInimigo.getNivel());
         } else {
-            this.monstroInimigo = new MonstroDeAgua("Nero",2);
+            this.monstroInimigo = new MonstroDeAgua("Nero",0);
             this.jogadorInimigo = new Jogador("Kai", monstroInimigo);
+            monstroInimigo.atualizarStatus(monstroInimigo.getNivel());
         }
     }
 
@@ -63,6 +66,8 @@ public class LutaUm {
                 jogador.setPocaoHp(jogador.getPocaoHp() + 1);
 
                 System.out.println("A Vida do seu " + monstroJogador.getNome() + " está cheia novamente!");
+                monstroJogador.setNivel(monstroJogador.getNivel()+1);
+                monstroJogador.atualizarStatus(monstroJogador.getNivel());
                 monstroJogador.setVida(monstroJogador.getFullVida());
                 paineis.pausa(1000);
                 vitoria = true;

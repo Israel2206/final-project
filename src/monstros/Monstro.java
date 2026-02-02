@@ -31,6 +31,13 @@ public class Monstro {
         this.multiplicadorEspecial = 1.2;
     }
 
+    public int getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
+    }
 
     public double getMultiplicadorBase() {
         return multiplicadorBase;
@@ -134,11 +141,15 @@ public class Monstro {
 
     //nome auto explicativo!!!!
     public void atualizarStatus(int nivel){
-        double nivelVida = nivel/10; // nivel = 1 vira 0.1
+        double porcentagem = nivel*0.1; // nivel = 1 vira 0.1
 
-        int vida = (int) (getFullVida() * (1 + nivelVida));
-
+        int vida = (int) (getFullVida() * (1 + porcentagem));
         setFullVida(vida);
 
+        int dano = (int) (getDano() * (1 + porcentagem));
+        setDano(dano);
     }
 }
+
+//      System.out.println("Vida atualizada: "+getFullVida());
+//      System.out.println("Dano atualizado: "+getDano());

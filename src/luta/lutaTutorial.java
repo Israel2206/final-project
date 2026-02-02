@@ -52,6 +52,8 @@ public class lutaTutorial {
                 jogador.setPocaoHp(jogador.getPocaoHp() + 1);
 
                 System.out.println("A Vida do seu " + monstroJogador.getNome() + " está cheia novamente!");
+                monstroJogador.setNivel(monstroJogador.getNivel()+1);
+                monstroJogador.atualizarStatus(monstroJogador.getNivel());
                 monstroJogador.setVida(monstroJogador.getFullVida());
                 paineis.pausa(1000);
                 vitoria = true;
