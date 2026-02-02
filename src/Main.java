@@ -1,6 +1,4 @@
-import luta.LutaDois;
-import luta.LutaUm;
-import luta.lutaTutorial;
+import luta.*;
 import monstros.*;
 import jogador.Jogador;
 import paineis.Paineis;
@@ -191,16 +189,21 @@ public class Main {
         if (!lutaTutorial.vitoria){
             System.out.println("\n=== GAME OVER ===");
         } else {
-            painel.painelLutaUm();
+            painel.painelLutaUm(); // chama as lutas
 
             LutaUm lutaUm = new LutaUm(jogador);
-
             lutaUm.iniciarLutaUm();
 
             LutaDois lutaDois = new LutaDois(jogador);
-
             lutaDois.iniciarLutaDois();
+
+            LutaTres lutaTres = new LutaTres(jogador);
+            lutaTres.iniciarLutaTres();
+
+            LutaQuatro lutaQuatro = new LutaQuatro(jogador);
+            lutaQuatro.iniciarLutaQuatro();
 
         }
     }
 }
+// Breno Israel e Igor Franco

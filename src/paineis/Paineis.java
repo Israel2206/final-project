@@ -15,7 +15,7 @@ public class Paineis {
         System.out.println("Apenas os mais fortes chegam ao final.");
         System.out.println();
         pausa(1200);
-        System.out.println("Prepare-se para enfrentar 5 chefes");
+        System.out.println("Prepare-se para enfrentar os melhores!");
         pausa(700);
         System.out.println("E provar que você é o verdadeiro campeão.");
         System.out.println();
@@ -110,6 +110,9 @@ public class Paineis {
         System.out.println();
         pausa(900);
 
+        System.out.println("Você se sente mais preparado do que nunca.");
+        System.out.println("Que comece o seu primeiro desafio!\n");
+        pausa(1000);
         System.out.println("======================================");
     }
 
@@ -162,6 +165,7 @@ public class Paineis {
         System.out.println();
         pausa(900);
 
+        System.out.println("Parabéns por sua primeira vitória!");
         System.out.println("Você avança para a próxima área da arena.");
         pausa(700);
         System.out.println("O chão começa a esquentar sob seus pés.");

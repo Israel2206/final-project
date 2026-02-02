@@ -2,14 +2,14 @@ package luta;
 
 import jogador.Jogador;
 import monstros.Monstro;
-import monstros.MonstroDeFogo;
+import monstros.MonstroDeTerra;
 import paineis.Paineis;
 
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
-public class LutaDois {
+public class LutaTres {
 
     private Jogador jogador;
     private Monstro monstroJogador;
@@ -20,19 +20,32 @@ public class LutaDois {
 
     private Scanner sc = new Scanner(System.in);
     private Random random = new Random();
-    private int chance = 70;
+    private int chance = 60; // mais difícil que a luta dois
 
-    // Monstro de fogo fixo na luta dois
-    public LutaDois(Jogador jogador) {
+    // Construtor
+    public LutaTres(Jogador jogador) {
         this.jogador = jogador;
         this.monstroJogador = jogador.getMonstro();
 
-        this.monstroInimigo = new MonstroDeFogo("Combuster", 3);
-        this.jogadorInimigo = new Jogador("Magman", monstroInimigo);
+        this.monstroInimigo = new MonstroDeTerra("Terran", 6);
+        this.jogadorInimigo = new Jogador("Gambit", monstroInimigo);
     }
 
-    public void iniciarLutaDois() {
-        paineis.painelLutaDois();
+    public void iniciarLutaTres() {
+
+        paineis.pausa(800);
+        System.out.println("\n======================================");
+        System.out.println("Você conquista a sua segunda vitoria e segue em seu objetivo!");
+        System.out.println("\nA arena muda.");
+        paineis.pausa(700);
+        System.out.println("O chão é pesado.\n");
+        paineis.pausa(700);
+        System.out.println("Cada passo exige esforço.");
+        System.out.println("Um novo oponente aparece.\n");
+        System.out.println("A multidão clama por seu adversário");
+        System.out.println("Se prepare para a proxima luta!\n");
+        System.out.println("======================================\n");
+        paineis.pausa(900);
 
         paineis.painelStatusBatalha(jogador, monstroInimigo, jogadorInimigo);
 
@@ -46,14 +59,17 @@ public class LutaDois {
             if (monstroInimigo.getVida() <= 0) {
                 paineis.pausa(600);
                 System.out.println("\nVocê venceu a batalha!");
-                paineis.pausa(900);
+                paineis.pausa(800);
+
+                System.out.println("Seu esforço começa a valer a pena.");
+                paineis.pausa(700);
 
                 System.out.println("Você recebeu +1 poção de HP!");
-                paineis.pausa(700);
                 jogador.setPocaoHp(jogador.getPocaoHp() + 1);
+                paineis.pausa(700);
 
-                System.out.println("A Vida do seu " + monstroJogador.getNome() + " está cheia novamente!");
                 monstroJogador.setVida(monstroJogador.getFullVida());
+                System.out.println("Seu monstro recuperou toda a vida!");
                 paineis.pausa(1000);
 
                 vitoria = true;
@@ -67,9 +83,9 @@ public class LutaDois {
                 System.out.println("\nSeu monstro foi derrotado...");
                 paineis.pausa(900);
 
-                System.out.println("O calor da batalha foi demais para você.");
-                paineis.pausa(800);
-                System.out.println("Talvez enfrentar o fogo sem preparo não tenha sido a melhor ideia.");
+                System.out.println("Aqui, força bruta faz diferença.");
+                paineis.pausa(900);
+                System.out.println("Você ainda precisa evoluir.");
                 paineis.pausa(1200);
 
                 vitoria = false;
@@ -93,7 +109,6 @@ public class LutaDois {
                 sc.nextLine();
 
                 if (escolha == 3) {
-                    paineis.pausa(400);
                     jogador.usarPocao(jogador, monstroJogador);
                     paineis.pausa(600);
                     continue;
@@ -102,18 +117,16 @@ public class LutaDois {
                 if (escolha >= 1 && escolha <= 4) {
                     break;
                 } else {
-                    paineis.pausa(300);
-                    System.out.println("Opção inválida! Digite apenas 1, 2, 3 ou 4.");
+                    System.out.println("Opção inválida!");
                 }
 
             } catch (InputMismatchException e) {
                 sc.nextLine();
-                paineis.pausa(300);
-                System.out.println("Entrada inválida! Digite apenas números.");
+                System.out.println("Digite apenas números.");
             }
         }
 
-        paineis.pausa(500);
+        paineis.pausa(400);
         switch (escolha) {
             case 1 -> monstroJogador.usarAtaqueBasico(monstroJogador, monstroInimigo, chance);
             case 2 -> monstroJogador.usarAtaqueEspecial(monstroJogador, monstroInimigo);
@@ -123,14 +136,14 @@ public class LutaDois {
 
     private void turnoInimigo() {
         paineis.pausa(600);
-        System.out.println("\nO " + monstroInimigo.getNome() + " ataca!");
+        System.out.println("\nO " + monstroInimigo.getNome() + " avança!");
         paineis.pausa(700);
 
-        int sorteDoMonstro = random.nextInt(5) + 1;
-        if (sorteDoMonstro <= 3) {
-            monstroInimigo.usarAtaqueBasico(monstroInimigo, monstroJogador, chance);
-        } else {
+        int sorte = random.nextInt(4) + 1;
+        if (sorte <= 2) {
             monstroInimigo.usarAtaqueEspecial(monstroInimigo, monstroJogador);
+        } else {
+            monstroInimigo.usarAtaqueBasico(monstroInimigo, monstroJogador, chance);
         }
     }
 }
