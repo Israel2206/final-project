@@ -27,7 +27,7 @@ public class LutaDois {
         this.jogador = jogador;
         this.monstroJogador = jogador.getMonstro();
 
-        this.monstroInimigo = new MonstroDeFogo("Combuster", 3);
+        this.monstroInimigo = new MonstroDeFogo("Combuster", 1);
         this.jogadorInimigo = new Jogador("Magman", monstroInimigo);
     }
 

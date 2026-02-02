@@ -5,9 +5,9 @@ public class MonstroDeFogo  extends Monstro{
     public MonstroDeFogo(String nome, int nivel) {
         super(nome, nivel);
         this.tipo = "fogo";
-        this.dano = 13;
-        this.vida = 35;
-        this.fullVida = 35;
+        this.dano += 3;
+        this.fullVida += 5;
+        this.vida = this.fullVida;
         this.ataqueBase = "Rabada de Fogo";
         this.multiplicadorBase = 1.0;
         this.ataqueEspecial = "Fosforo com rexona";

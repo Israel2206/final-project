@@ -214,7 +214,6 @@ public class Main {
                         lutaQuatro.iniciarLutaQuatro();
                         if (!lutaQuatro.vitoria){
                             System.out.println("\n=== GAME OVER ===");
-
                         }
                     }
 

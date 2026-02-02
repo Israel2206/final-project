@@ -28,13 +28,13 @@ public class LutaQuatro {
         int sorteio = random.nextInt(4) + 1;
 
         if (sorteio == 1) {
-            monstroInimigo = new MonstroDeFogo("Blazer", 4);
+            monstroInimigo = new MonstroDeFogo("Blazer", 5);
             jogadorInimigo = new Jogador("Ignis", monstroInimigo);
         } else if (sorteio == 2) {
             monstroInimigo = new MonstroDeAgua("Hydron", 4);
             jogadorInimigo = new Jogador("Aqua", monstroInimigo);
         } else if (sorteio == 3) {
-            monstroInimigo = new MonstroDeTerra("Terrak", 4);
+            monstroInimigo = new MonstroDeTerra("Terrak", 5);
             jogadorInimigo = new Jogador("Gron", monstroInimigo);
         } else {
             monstroInimigo = new MonstroDeAr("Zeph", 4);
