@@ -60,6 +60,11 @@ public class LutaFinal {
                 monstroJogador.setNivel(monstroJogador.getNivel()+4);
                 monstroJogador.atualizarStatus(monstroJogador.getNivel());
                 monstroJogador.setVida(monstroJogador.getFullVida());
+
+                //restaurando os especiais
+                monstroJogador.setLimiteDeAtaqueEspecial(monstroJogador.getATAQUE_ESPECIAL());
+                monstroJogador.setLimiteDeAtaqueDesbloqueado(monstroJogador.getATAQUE_DESBLOQUEADO());
+                paineis.mostrarAtualizacao(monstroJogador);
                 paineis.pausa(1000);
                 System.out.println("\nO campeão cai de joelhos.");
                 paineis.pausa(1000);
