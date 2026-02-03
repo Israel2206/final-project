@@ -193,7 +193,7 @@ public class Monstro {
             monstroUm.setLimiteDeAtaqueEspecial(monstroUm.getLimiteDeAtaqueEspecial()-1);
         } else {
             if (monstroUm.limiteDeAtaqueEspecial <= 0){
-                System.out.println(monstroUm.getNome()+" tenta usar "+monstroUm.getAtaqueDesbloqueado()+" porém o limite foi atingido!");
+                System.out.println(monstroUm.getNome()+" tenta usar "+monstroUm.getAtaqueEspecial()+" porém o limite foi atingido!");
             } else {
                 double multiplicador = receberDanoEspecial(monstroDois);
                 int dano = (int) (monstroUm.getDano() * multiplicador);
