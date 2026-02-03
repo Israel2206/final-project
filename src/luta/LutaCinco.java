@@ -41,7 +41,6 @@ public class LutaCinco {
         System.out.println("======================\n");
 
         do {
-            chance = random.nextInt(100)+1;
             turnoDoJogador();
 
             if (monstroInimigo.getVida() <= 0) {
@@ -66,7 +65,6 @@ public class LutaCinco {
                 vitoria = true;
                 break;
             }
-            chance = random.nextInt(100)+1;
             turnoInimigo();
 
             if (monstroJogador.getVida() <= 0) {

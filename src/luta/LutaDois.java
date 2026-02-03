@@ -20,7 +20,7 @@ public class LutaDois {
 
     private Scanner sc = new Scanner(System.in);
     private Random random = new Random();
-    private int chance;
+    private int chance = 80;
 
     // Monstro de fogo fixo na luta dois
     public LutaDois(Jogador jogador) {
@@ -41,7 +41,6 @@ public class LutaDois {
         System.out.println("======================\n");
 
         do {
-            chance = random.nextInt(100)+1;
             turnoDoJogador();
 
             if (monstroInimigo.getVida() <= 0) {
@@ -65,7 +64,6 @@ public class LutaDois {
                 vitoria = true;
                 break;
             }
-            chance = random.nextInt(100)+1;
             turnoInimigo();
 
             if (monstroJogador.getVida() <= 0) {
