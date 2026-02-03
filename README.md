@@ -1,4 +1,6 @@
 # final-project
+Projeto Final – Curso de Java (Carga Horária: 40h)
+
 Descrição:
 Este projeto final faz parte do curso de Java com carga horária de 40 horas. Ele tem como objetivo aplicar os conhecimentos adquiridos durante o curso, incluindo conceitos de Programação Orientada a Objetos (POO), estruturas de controle, manipulação de dados, arrays, listas, e interação com o usuário via console.
 
