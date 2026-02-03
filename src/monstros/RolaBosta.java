@@ -13,6 +13,8 @@ public class RolaBosta extends Monstro {
         this.multiplicadorEspecial = 1.40;
         this.ataqueDesbloqueado = "Rolada Suprema Mas Nem Tanto";
         this.multiplicadorDesbloqueado = 1.50;
+        this.vidaBase = 45;
+        this.danoBase = 8;
     }
 
     @Override
