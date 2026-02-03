@@ -43,13 +43,14 @@ public class Jogador {
         if (jogador.getPocaoHp() < 1){
             System.out.println("Poções Indisponiveis!");
         } else {
-            if (monstroJogador.getVida() >= monstroJogador.getFullVida()){ //não ultrapassar a vida
+            if (monstroJogador.getVida() >= monstroJogador.getFullVida()){
                 monstroJogador.setVida(monstroJogador.getFullVida());
                 System.out.println("Impossível utilizar poção! HP do monstro cheio");
+                return;
             }
 
-            else if (monstroJogador.getVida() >= monstroJogador.getFullVida()-15){ //ele cura +15, mas n ultrapassa
-                int cura = monstroJogador.getFullVida() - monstroJogador.getVida(); //pega o valor exato da cura pra n ultrapassar!
+            else if (monstroJogador.getVida() >= monstroJogador.getFullVida()-15){
+                int cura = monstroJogador.getFullVida() - monstroJogador.getVida();
                 jogador.setPocaoHp(jogador.getPocaoHp()-1);
                 monstroJogador.setVida(monstroJogador.getVida()+cura);
                 System.out.println("Poção usada com sucesso!\n+"+cura+" de Cura!");
@@ -57,11 +58,12 @@ public class Jogador {
             }
 
             else {
-                monstroJogador.setVida(monstroJogador.getVida()+15);
-                System.out.println("Poção usada com sucesso!\n+15 de Cura!");
+                monstroJogador.setVida(monstroJogador.getVida()+20);
+                System.out.println("Poção usada com sucesso!\n+20 de Cura!");
                 jogador.setPocaoHp(jogador.getPocaoHp()-1);
                 System.out.println("Vida: "+monstroJogador.getVida());
             }
         }
     }
+
 }

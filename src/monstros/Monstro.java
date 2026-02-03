@@ -188,23 +188,25 @@ public class Monstro {
     public void usarAtaqueEspecial(Monstro monstroUm, Monstro monstroDois, int chance){
         System.out.println("\nO "+monstroUm.getNome()+" usou "+monstroUm.getAtaqueEspecial()+"!");
 
-        if (!acertarAtaque(chance)){
-            System.out.println("Mas o ataque errou!");
-            monstroUm.setLimiteDeAtaqueEspecial(monstroUm.getLimiteDeAtaqueEspecial()-1);
-        } else {
-            if (monstroUm.limiteDeAtaqueEspecial <= 0){
-                System.out.println(monstroUm.getNome()+" tenta usar "+monstroUm.getAtaqueEspecial()+" porém o limite foi atingido!");
-            } else {
-                double multiplicador = receberDanoEspecial(monstroDois);
-                int dano = (int) (monstroUm.getDano() * multiplicador);
-                aplicarDano(monstroDois, dano);
-                System.out.println("Ataque acertou! Dano causado: " + dano);
-                monstroUm.setLimiteDeAtaqueEspecial(monstroUm.getLimiteDeAtaqueEspecial()-1);
-            }
+        if (monstroUm.getLimiteDeAtaqueEspecial() <= 0){
+            System.out.println(monstroUm.getNome()+" tenta usar "+monstroUm.getAtaqueEspecial()+" porém o limite foi atingido!");
+            return;
         }
 
-        monstroUm.mostrarVida(monstroUm,monstroDois);
+        if (!acertarAtaque(chance)){
+            System.out.println("Mas o ataque errou!");
+            monstroUm.setLimiteDeAtaqueEspecial(monstroUm.getLimiteDeAtaqueEspecial() - 1);
+        } else {
+            double multiplicador = receberDanoEspecial(monstroDois);
+            int dano = (int) (monstroUm.getDano() * multiplicador);
+            aplicarDano(monstroDois, dano);
+            System.out.println("Ataque acertou! Dano causado: " + dano);
+            monstroUm.setLimiteDeAtaqueEspecial(monstroUm.getLimiteDeAtaqueEspecial() - 1);
+        }
+
+        monstroUm.mostrarVida(monstroUm, monstroDois);
     }
+
 
     public void mostrarStatus(Jogador jogador, Monstro monstro){
         System.out.println("=== Status ===");
