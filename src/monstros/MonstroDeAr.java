@@ -9,9 +9,9 @@ public class MonstroDeAr extends Monstro{
         this.ataqueBase = "Ventania Braba";
         this.multiplicadorBase = 1.0;
         this.ataqueEspecial = "Furacão Catrina";
-        this.multiplicadorEspecial = 1.25;
+        this.multiplicadorEspecial = 1.30;
         this.ataqueDesbloqueado = "Dano Psicologico";
-        this.multiplicadorDesbloqueado = 1.15;
+        this.multiplicadorDesbloqueado = 1.40;
     }
 
     @Override
