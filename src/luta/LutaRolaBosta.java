@@ -85,24 +85,24 @@ public class LutaRolaBosta {
 
         while (true) {
             try {
-                paineis.painelDaLuta(jogador, monstroJogador);
+                paineis.painelPosLutaQuatro(jogador, monstroJogador);
                 System.out.print("Escolha uma ação: ");
 
                 escolha = sc.nextInt();
                 sc.nextLine();
 
-                if (escolha == 3) {
+                if (escolha == 4) {
                     paineis.pausa(400);
                     jogador.usarPocao(jogador, monstroJogador);
                     paineis.pausa(600);
                     continue;
-                } else if (escolha == 4) {
+                } else if (escolha == 5) {
                     paineis.pausa(500);
                     monstroJogador.mostrarStatus(jogador, monstroJogador);
                     continue;
                 }
 
-                if (escolha >= 1 && escolha <= 4) {
+                if (escolha >= 1 && escolha <= 5) {
                     break;
                 } else {
                     paineis.pausa(300);
@@ -118,10 +118,9 @@ public class LutaRolaBosta {
 
         paineis.pausa(500);
         switch (escolha) {
-            case 1 -> monstroJogador.usarAtaqueBasico(
-                    monstroJogador, monstroInimigo, chanceJogador);
-            case 2 -> monstroJogador.usarAtaqueEspecial(
-                    monstroJogador, monstroInimigo, chanceJogador);
+            case 1 -> monstroJogador.usarAtaqueBasico(monstroJogador, monstroInimigo, chanceJogador);
+            case 2 -> monstroJogador.usarAtaqueEspecial(monstroJogador, monstroInimigo, chanceJogador);
+            case 3 -> monstroJogador.usarAtaqueConquistado(monstroJogador, monstroInimigo, chanceJogador);
         }
     }
 
@@ -133,11 +132,9 @@ public class LutaRolaBosta {
         int sorte = random.nextInt(4) + 1;
 
         if (sorte <= 2) {
-            monstroInimigo.usarAtaqueBasico(
-                    monstroInimigo, monstroJogador, chanceInimigo);
+            monstroInimigo.usarAtaqueBasico(monstroInimigo, monstroJogador, chanceInimigo);
         } else {
-            monstroInimigo.usarAtaqueEspecial(
-                    monstroInimigo, monstroJogador, chanceInimigo);
+            monstroInimigo.usarAtaqueEspecial(monstroInimigo, monstroJogador, chanceInimigo);
         }
     }
 }
