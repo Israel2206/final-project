@@ -81,7 +81,7 @@ public class Paineis {
 
     //Adicionando os métodos de dar uma pausa aqui, pois não tem um lugar melhor
     public void pausa(int millis) {
-        millis = 0; //isso é caso formos testar o código
+        //millis = 0; //isso é caso formos testar o código
         try {
             Thread.sleep(millis);
         } catch (InterruptedException e) {
@@ -295,13 +295,34 @@ public class Paineis {
 
         System.out.println("[ 1 ] "+monstroJogador.getAtaqueBase());
         pausa(200);
-        System.out.println("[ 2 ] "+monstroJogador.getAtaqueEspecial());
+        System.out.println("[ 2 ] "+monstroJogador.getAtaqueEspecial()+" "+monstroJogador.getLimiteDeAtaqueEspecial()+"/5");
         pausa(200);
         System.out.println("[ 3 ] Usar Poção de HP (" + jogador.getPocaoHp() + ")");
         pausa(200);
         System.out.println("[ 4 ] Mostrar Status");
         pausa(300);
     }
+
+    public void painelPosLutaQuatro(Jogador jogador, Monstro monstroJogador){
+        pausa(400);
+        System.out.println("----------------------------");
+        System.out.println("Sua vez!");
+        pausa(300);
+
+        System.out.println("[ 1 ] "+monstroJogador.getAtaqueBase());
+        pausa(200);
+        System.out.println("[ 2 ] "+monstroJogador.getAtaqueEspecial());
+        pausa(200);
+        System.out.println("[ 3 ] "+monstroJogador.getAtaqueDesbloqueado()+" "+monstroJogador.getLimiteDeAtaqueDesbloqueado()+"/8");
+        pausa(200);
+        System.out.println("[ 4 ] Usar Poção de HP (" + jogador.getPocaoHp() + ")");
+        pausa(200);
+        System.out.println("[ 5 ] Mostrar Status");
+        pausa(300);
+    }
+
+
+
     public void painelLutaDois() {
         pausa(800);
         System.out.println("\n======================================");
@@ -643,12 +664,14 @@ public class Paineis {
         pausa(1200);
 
         System.out.println("======================================");
+        System.out.println("               CRÉDITOS");
+        System.out.println("======================================\n");
         System.out.println("Design de níveis: Breno Israel e Igor Franco");
-        System.out.println("Metodos Especificos: Breno Israel");
+        System.out.println("Métodos Específicos: Breno Israel");
         System.out.println("Roteiro: Igor Franco");
         System.out.println("Programação: Breno Israel e Igor Franco");
         System.out.println("Projeto final desenvolvido para o curso de JAVA");
-        System.out.println("Docente Résponsavel: Neidson Sampaio");
+        System.out.println("Docente Responsável: Neidson Sampaio");
         System.out.println("Apoio: Kid Bengala, João do pão, BBB26, PT");
     }
 
@@ -656,5 +679,45 @@ public class Paineis {
         System.out.println("HP atualizado: "+monstro.getFullVida());
         System.out.println("Dano Atualizado: "+monstro.getDano());
     }
+
+    public void painelNovoAtaque(Monstro monstro) {
+        pausa(800);
+        System.out.println("\n======================================");
+        System.out.println();
+        pausa(700);
+
+        System.out.println("Algo diferente acontece...");
+        pausa(900);
+        System.out.println("Uma energia estranha começa a surgir.");
+        System.out.println();
+        pausa(1100);
+
+        System.out.println("Seu monstro reage.");
+        pausa(700);
+        System.out.println("Ele fecha os olhos por um instante.");
+        System.out.println();
+        pausa(1000);
+
+        System.out.println("Uma nova força desperta!");
+        System.out.println();
+        pausa(1200);
+
+        System.out.println(">>> " + monstro.getNome().toUpperCase() + " APRENDEU UM NOVO ATAQUE! <<<");
+        System.out.println();
+        pausa(1300);
+
+        System.out.println("Novo ataque desbloqueado:");
+        pausa(600);
+        System.out.println("» " + monstro.getAtaqueDesbloqueado());
+        System.out.println();
+        pausa(1000);
+
+        System.out.println("O poder do seu monstro aumentou.");
+        System.out.println();
+        pausa(900);
+        System.out.println("======================================");
+    }
+
+
 
 }

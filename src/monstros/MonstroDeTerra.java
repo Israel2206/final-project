@@ -5,13 +5,13 @@ public class MonstroDeTerra  extends Monstro {
     public MonstroDeTerra(String nome, int nivel) {
         super(nome, nivel);
         this.tipo = "terra";
-        this.dano += 3;
-        this.fullVida += 5;
         this.vida = this.fullVida;
         this.ataqueBase = "Fio-Terra";
         this.multiplicadorBase = 1.0;
         this.ataqueEspecial = "Pedra que esmagou obito";
         this.multiplicadorEspecial = 1.25;
+        this.ataqueDesbloqueado = "Terra Batida Premium";
+        this.multiplicadorDesbloqueado = 1.15;
     }
 
     @Override
@@ -32,5 +32,15 @@ public class MonstroDeTerra  extends Monstro {
             return 1.1;
         }
         return multiplicadorEspecial;
+    }
+
+    @Override
+    public double receberDanoDesbloqueado(Monstro inimigo) {
+        if (inimigo instanceof MonstroDeAgua){
+            return 1.25;
+        } else if (inimigo instanceof MonstroDeAr){
+            return 1.05;
+        }
+        return multiplicadorDesbloqueado;
     }
 }

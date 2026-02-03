@@ -62,11 +62,15 @@ public class LutaUm {
                 paineis.pausa(700);
                 jogador.setPocaoHp(jogador.getPocaoHp() + 1);
 
+                //colocando a vida cheia
                 System.out.println("A Vida do seu " + monstroJogador.getNome() + " está cheia novamente!");
                 monstroJogador.setNivel(monstroJogador.getNivel()+1);
                 monstroJogador.atualizarStatus(monstroJogador.getNivel());
                 monstroJogador.setVida(monstroJogador.getFullVida());
                 paineis.pausa(1000);
+
+                //restaurando os especiais
+                monstroJogador.setLimiteDeAtaqueEspecial(monstroJogador.getATAQUE_ESPECIAL());
                 paineis.mostrarAtualizacao(monstroJogador);
                 vitoria = true;
                 break;

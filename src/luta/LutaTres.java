@@ -57,6 +57,9 @@ public class LutaTres {
                 monstroJogador.atualizarStatus(monstroJogador.getNivel());
                 monstroJogador.setVida(monstroJogador.getFullVida());
                 paineis.pausa(1000);
+
+                //restaurando os especiais
+                monstroJogador.setLimiteDeAtaqueEspecial(monstroJogador.getATAQUE_ESPECIAL());
                 paineis.mostrarAtualizacao(monstroJogador);
                 vitoria = true;
                 break;

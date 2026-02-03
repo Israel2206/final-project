@@ -5,19 +5,37 @@ import jogador.Jogador;
 import java.util.Random;
 
 public class Monstro {
+    //Nomes(str):
     protected String nome;
     protected String tipo;
+    protected String ataqueBase;
+    protected String ataqueEspecial;
+    protected String ataqueDesbloqueado;
+
+    //Multiplicadores de Dano(double)
+    protected double multiplicadorBase;
+    protected double multiplicadorEspecial;
+    protected double multiplicadorDesbloqueado;
+
+    //O máximo, não se pode alterar-lós, por conta do 'final'.
+    protected final int ATAQUE_ESPECIAL = 5;
+    protected final int ATAQUE_DESBLOQUEADO = 8;
+
+    //limitadores
+    protected int limiteDeAtaqueEspecial = 5;
+    protected int limiteDeAtaqueDesbloqueado = 8;
+
+    //Os valores ints
     protected int dano;
     protected int vida;
     protected int fullVida;
-    protected String ataqueBase;
-    protected double multiplicadorBase;
-    protected String ataqueEspecial;
-    protected double multiplicadorEspecial;
     protected int nivel;
+    protected int vidaBase = 35;
+    protected int danoBase = 9;
 
     private Random random = new Random();
 
+    //Construtor
     public Monstro(String nome, int nivel) {
         this.nome = nome;
         this.nivel = nivel;
@@ -31,6 +49,48 @@ public class Monstro {
         this.multiplicadorEspecial = 1.2;
 
         atualizarStatus(nivel);
+    }
+
+    //Getters e Setters
+
+    public int getATAQUE_ESPECIAL() {
+        return ATAQUE_ESPECIAL;
+    }
+
+    public int getATAQUE_DESBLOQUEADO() {
+        return ATAQUE_DESBLOQUEADO;
+    }
+
+    public int getLimiteDeAtaqueEspecial() {
+        return limiteDeAtaqueEspecial;
+    }
+
+    public void setLimiteDeAtaqueEspecial(int limiteDeAtaqueEspecial) {
+        this.limiteDeAtaqueEspecial = limiteDeAtaqueEspecial;
+    }
+
+    public int getLimiteDeAtaqueDesbloqueado() {
+        return limiteDeAtaqueDesbloqueado;
+    }
+
+    public void setLimiteDeAtaqueDesbloqueado(int limiteDeAtaqueDesbloqueado) {
+        this.limiteDeAtaqueDesbloqueado = limiteDeAtaqueDesbloqueado;
+    }
+
+    public double getMultiplicadorDesbloqueado() {
+        return multiplicadorDesbloqueado;
+    }
+
+    public void setMultiplicadorEspecial(double multiplicadorEspecial) {
+        this.multiplicadorEspecial = multiplicadorEspecial;
+    }
+
+    public String getAtaqueDesbloqueado() {
+        return ataqueDesbloqueado;
+    }
+
+    public void setAtaqueEspecial(String ataqueEspecial) {
+        this.ataqueEspecial = ataqueEspecial;
     }
 
     public int getNivel() {
@@ -89,6 +149,7 @@ public class Monstro {
         this.fullVida = fullVida;
     }
 
+    //Métodos
 
     public void aplicarDano(Monstro alvo, int dano){
         int novaVida = alvo.getVida() - dano;
@@ -129,11 +190,17 @@ public class Monstro {
 
         if (!acertarAtaque(chance)){
             System.out.println("Mas o ataque errou!");
+            monstroUm.setLimiteDeAtaqueEspecial(monstroUm.getLimiteDeAtaqueEspecial()-1);
         } else {
-            double multiplicador = receberDanoEspecial(monstroDois);
-            int dano = (int) (monstroUm.getDano() * multiplicador);
-            aplicarDano(monstroDois, dano);
-            System.out.println("Ataque acertou! Dano causado: " + dano);
+            if (monstroUm.limiteDeAtaqueEspecial <= 0){
+                System.out.println(monstroUm.getNome()+" tenta usar "+monstroUm.getAtaqueDesbloqueado()+" porém o limite foi atingido!");
+            } else {
+                double multiplicador = receberDanoEspecial(monstroDois);
+                int dano = (int) (monstroUm.getDano() * multiplicador);
+                aplicarDano(monstroDois, dano);
+                System.out.println("Ataque acertou! Dano causado: " + dano);
+                monstroUm.setLimiteDeAtaqueEspecial(monstroUm.getLimiteDeAtaqueEspecial()-1);
+            }
         }
 
         monstroUm.mostrarVida(monstroUm,monstroDois);
@@ -156,15 +223,39 @@ public class Monstro {
         return 1.15;
     }
 
+    public double receberDanoDesbloqueado(Monstro inimigo){
+        return 1.05;
+    }
+
     //nome auto explicativo!!!!
     public void atualizarStatus(int nivel){
-        double porcentagem = nivel*0.1; // nivel = 1 vira 0.1
+        this.fullVida = vidaBase + (int) (vidaBase * 0.1 * nivel);
+        this.vida = this.fullVida;
 
-        int vida = (int) (getFullVida() * (1 + porcentagem));
-        setFullVida(vida);
-
-        int dano = (int) (getDano() * (1 + porcentagem));
-        setDano(dano);
+        this.dano = danoBase + (int) (danoBase * 0.1 * nivel);
     }
+
+    //Desbloqueia esse Ataque na luta 5
+    public void usarAtaqueConquistado(Monstro monstroUm, Monstro monstroDois, int chance){
+        System.out.println("\nO "+monstroUm.getNome()+" tentou usar "+monstroUm.getAtaqueDesbloqueado()+"!");
+
+        if(!acertarAtaque(chance)){
+            System.out.println("Mas o ataque errou!");
+            monstroUm.setLimiteDeAtaqueDesbloqueado(monstroUm.getLimiteDeAtaqueDesbloqueado()-1);
+        } else {
+            if (monstroUm.limiteDeAtaqueDesbloqueado <= 0){
+                System.out.println(monstroUm.getNome()+" tenta usar "+monstroUm.getAtaqueDesbloqueado()+" porém o limite foi atingido!");
+            }else {
+                double multiplicador = receberDanoDesbloqueado(monstroDois);
+                int dano = (int) (monstroUm.getDano() * multiplicador);
+                aplicarDano(monstroDois, dano);
+                System.out.println("Ataque acertou! Dano causado: " + dano);
+                monstroUm.setLimiteDeAtaqueDesbloqueado(monstroUm.getLimiteDeAtaqueDesbloqueado()-1);
+            }
+        }
+
+        monstroUm.mostrarVida(monstroUm,monstroDois);
+    }
+
 
 }

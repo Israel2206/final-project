@@ -72,6 +72,11 @@ public class LutaQuatro {
                 paineis.pausa(1000);
                 paineis.mostrarAtualizacao(monstroJogador);
                 vitoria = true;
+
+                //restaurando os especiais
+                monstroJogador.setLimiteDeAtaqueEspecial(monstroJogador.getATAQUE_ESPECIAL());
+                paineis.painelNovoAtaque(monstroJogador);
+
                 break;
             }
 

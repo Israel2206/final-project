@@ -61,6 +61,15 @@ public class LutaFinal {
                 monstroJogador.atualizarStatus(monstroJogador.getNivel());
                 monstroJogador.setVida(monstroJogador.getFullVida());
                 paineis.pausa(1000);
+                System.out.println("\nO campeão cai de joelhos.");
+                paineis.pausa(1000);
+
+                System.out.println("O silêncio domina a arena.");
+                paineis.pausa(1000);
+
+                System.out.println("A verdade finalmente venceu.");
+                paineis.pausa(1200);
+
                 paineis.mostrarAtualizacao(monstroJogador);
                 vitoria = true;
                 break;
@@ -90,34 +99,42 @@ public class LutaFinal {
 
         while (true) {
             try {
-                paineis.painelDaLuta(jogador, monstroJogador);
-                System.out.print("Escolha sua ação: ");
+                paineis.painelPosLutaQuatro(jogador, monstroJogador);
+                System.out.print("Escolha uma ação: ");
 
                 escolha = sc.nextInt();
                 sc.nextLine();
 
-                if (escolha == 3) {
+                if (escolha == 4) {
+                    paineis.pausa(400);
                     jogador.usarPocao(jogador, monstroJogador);
+                    paineis.pausa(600);
                     continue;
-                } else if (escolha == 4) {
+                } else if (escolha == 5) {
+                    paineis.pausa(500);
                     monstroJogador.mostrarStatus(jogador, monstroJogador);
                     continue;
                 }
 
-                if (escolha >= 1 && escolha <= 4) break;
-
-                System.out.println("Escolha inválida.");
+                if (escolha >= 1 && escolha <= 5) {
+                    break;
+                } else {
+                    paineis.pausa(300);
+                    System.out.println("Opção inválida! Digite apenas 1, 2, 3, 4 ou 5.");
+                }
 
             } catch (InputMismatchException e) {
                 sc.nextLine();
-                System.out.println("Digite apenas números.");
+                paineis.pausa(300);
+                System.out.println("Entrada inválida! Digite apenas números.");
             }
         }
 
-        paineis.pausa(600);
+        paineis.pausa(500);
         switch (escolha) {
             case 1 -> monstroJogador.usarAtaqueBasico(monstroJogador, monstroInimigo, chance);
             case 2 -> monstroJogador.usarAtaqueEspecial(monstroJogador, monstroInimigo, chance);
+            case 3 -> monstroJogador.usarAtaqueConquistado(monstroJogador, monstroInimigo, chance);
         }
     }
 

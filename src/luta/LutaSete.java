@@ -58,6 +58,10 @@ public class LutaSete {
                 monstroJogador.atualizarStatus(monstroJogador.getNivel());
                 monstroJogador.setVida(monstroJogador.getFullVida());
                 paineis.pausa(1000);
+
+                //restaurando os especiais
+                monstroJogador.setLimiteDeAtaqueEspecial(monstroJogador.getATAQUE_ESPECIAL());
+                monstroJogador.setLimiteDeAtaqueDesbloqueado(monstroJogador.getATAQUE_DESBLOQUEADO());
                 paineis.mostrarAtualizacao(monstroJogador);
                 vitoria = true;
                 break;
@@ -87,27 +91,34 @@ public class LutaSete {
 
         while (true) {
             try {
-                paineis.painelDaLuta(jogador, monstroJogador);
+                paineis.painelPosLutaQuatro(jogador, monstroJogador);
                 System.out.print("Escolha uma ação: ");
 
                 escolha = sc.nextInt();
                 sc.nextLine();
 
-                if (escolha == 3) {
+                if (escolha == 4) {
+                    paineis.pausa(400);
                     jogador.usarPocao(jogador, monstroJogador);
+                    paineis.pausa(600);
                     continue;
-                } else if (escolha == 4) {
+                } else if (escolha == 5) {
+                    paineis.pausa(500);
                     monstroJogador.mostrarStatus(jogador, monstroJogador);
                     continue;
                 }
 
-                if (escolha >= 1 && escolha <= 4) break;
-
-                System.out.println("Opção inválida!");
+                if (escolha >= 1 && escolha <= 5) {
+                    break;
+                } else {
+                    paineis.pausa(300);
+                    System.out.println("Opção inválida! Digite apenas 1, 2, 3, 4 ou 5.");
+                }
 
             } catch (InputMismatchException e) {
                 sc.nextLine();
-                System.out.println("Digite apenas números.");
+                paineis.pausa(300);
+                System.out.println("Entrada inválida! Digite apenas números.");
             }
         }
 
@@ -115,6 +126,7 @@ public class LutaSete {
         switch (escolha) {
             case 1 -> monstroJogador.usarAtaqueBasico(monstroJogador, monstroInimigo, chance);
             case 2 -> monstroJogador.usarAtaqueEspecial(monstroJogador, monstroInimigo, chance);
+            case 3 -> monstroJogador.usarAtaqueConquistado(monstroJogador, monstroInimigo, chance);
         }
     }
 
