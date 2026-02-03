@@ -311,7 +311,7 @@ public class Paineis {
 
         System.out.println("[ 1 ] "+monstroJogador.getAtaqueBase());
         pausa(200);
-        System.out.println("[ 2 ] "+monstroJogador.getAtaqueEspecial());
+        System.out.println("[ 2 ] "+monstroJogador.getAtaqueEspecial()+" "+monstroJogador.getLimiteDeAtaqueEspecial()+"/5");
         pausa(200);
         System.out.println("[ 3 ] "+monstroJogador.getAtaqueDesbloqueado()+" "+monstroJogador.getLimiteDeAtaqueDesbloqueado()+"/8");
         pausa(200);

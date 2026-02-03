@@ -156,7 +156,7 @@ public class lutaTutorial {
     private void ataqueBasico(String nomeAtaque, double multiplicador) {
         System.out.println("\n" + monstroJogador.getNome() + " usou " + nomeAtaque + "!");
 
-        if (random.nextInt(100) < 75) {
+        if (random.nextInt(100) < 80) {
             int dano = (int) (monstroJogador.getDano() * multiplicador);
             monstroJogador.aplicarDano(monstroInimigo, dano);
             System.out.println("Ataque acertou! Dano causado: " + dano);
