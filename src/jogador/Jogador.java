@@ -58,8 +58,8 @@ public class Jogador {
             }
 
             else {
-                monstroJogador.setVida(monstroJogador.getVida()+15);
-                System.out.println("Poção usada com sucesso!\n+15 de Cura!");
+                monstroJogador.setVida(monstroJogador.getVida()+20);
+                System.out.println("Poção usada com sucesso!\n+20 de Cura!");
                 jogador.setPocaoHp(jogador.getPocaoHp()-1);
                 System.out.println("Vida: "+monstroJogador.getVida());
             }
