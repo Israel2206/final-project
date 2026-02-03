@@ -62,7 +62,7 @@ public class LutaUm {
 
                 System.out.println("Você recebeu +1 poção de HP!");
                 paineis.pausa(700);
-                jogador.setPocaoHp(jogador.getPocaoHp() + 1);
+                jogador.setPocaoHp(jogador.getPocaoHp() + 2);
 
                 //colocando a vida cheia
                 System.out.println("A Vida do seu " + monstroJogador.getNome() + " está cheia novamente!");
@@ -150,6 +150,7 @@ public class LutaUm {
             monstroInimigo.usarAtaqueBasico(monstroInimigo,monstroJogador,chance);
         } else {
             monstroInimigo.usarAtaqueEspecial(monstroInimigo,monstroJogador,chance);
+            monstroInimigo.setLimiteDeAtaqueEspecial(monstroInimigo.getLimiteDeAtaqueEspecial()+1);
         }
     }
 }

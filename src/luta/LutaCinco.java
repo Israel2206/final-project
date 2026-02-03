@@ -142,6 +142,7 @@ public class LutaCinco {
             monstroInimigo.usarAtaqueBasico(monstroInimigo, monstroJogador, chance);
         } else {
             monstroInimigo.usarAtaqueEspecial(monstroInimigo, monstroJogador, chance);
+            monstroInimigo.setLimiteDeAtaqueEspecial(monstroInimigo.getLimiteDeAtaqueEspecial()+1);
         }
     }
 }
