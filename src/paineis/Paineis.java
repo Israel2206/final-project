@@ -742,6 +742,7 @@ public class Paineis {
         pausa(900);
         System.out.println("======================================");
     }
+
     public void painelLutaRolaBosta() {
         pausa(700);
         System.out.println("\n======================================");
@@ -803,7 +804,5 @@ public class Paineis {
         System.out.println("Você vai precisar.");
         pausa(1000);
     }
-
-
 
 }

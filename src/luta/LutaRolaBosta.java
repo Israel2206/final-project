@@ -3,6 +3,7 @@ package luta;
 import jogador.Jogador;
 import monstros.Monstro;
 import monstros.MonstroDeTerra;
+import monstros.RolaBosta;
 import paineis.Paineis;
 
 import java.util.InputMismatchException;
@@ -31,7 +32,7 @@ public class LutaRolaBosta {
         this.monstroJogador = jogador.getMonstro();
 
         // Boss secreto absurdo
-        this.monstroInimigo = new MonstroDeTerra("Rola-Bosta Ancestral", 10);
+        this.monstroInimigo = new RolaBosta("Rola-Bosta Ancestral", 18);
         this.jogadorInimigo = new Jogador("???", monstroInimigo);
     }
 
@@ -77,8 +78,6 @@ public class LutaRolaBosta {
 
         } while (monstroJogador.getVida() > 0 && monstroInimigo.getVida() > 0);
     }
-
-    // ================= TURNOS =================
 
     private void turnoDoJogador() {
         int escolha;

@@ -257,7 +257,9 @@ public class Main {
                                             painel.painelLutaFinalDepois();
                                             System.out.println("Aperte enter para o desafio secreto!");
                                             sc.nextLine();
-                                            painel.painelLutaRolaBosta();
+                                            LutaRolaBosta lutaRolaBosta = new LutaRolaBosta(jogador);
+
+                                            lutaRolaBosta.iniciarLutaRolaBosta();
                                         }
                                     }
                                 }
