@@ -151,7 +151,7 @@ public class LutaFinal {
             monstroInimigo.usarAtaqueEspecial(monstroInimigo, monstroJogador, chance);
         } else {
             monstroInimigo.usarAtaqueBasico(monstroInimigo, monstroJogador, chance);
-            monstroInimigo.setLimiteDeAtaqueEspecial(monstroInimigo.getLimiteDeAtaqueEspecial()+1);
+            monstroInimigo.setLimiteDeAtaqueEspecial(monstroInimigo.getATAQUE_DESBLOQUEADO());
         }
     }
 }

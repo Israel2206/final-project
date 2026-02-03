@@ -134,7 +134,7 @@ public class LutaRolaBosta {
             monstroInimigo.usarAtaqueBasico(monstroInimigo, monstroJogador, chanceInimigo);
         } else {
             monstroInimigo.usarAtaqueEspecial(monstroInimigo, monstroJogador, chanceInimigo);
-            monstroInimigo.setLimiteDeAtaqueEspecial(monstroInimigo.getLimiteDeAtaqueEspecial()+1);
+            monstroInimigo.setLimiteDeAtaqueEspecial(monstroInimigo.getATAQUE_DESBLOQUEADO());
         }
     }
 }
