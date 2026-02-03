@@ -85,9 +85,7 @@ public class LutaQuatro {
             paineis.pausa(500);
 
             if (monstroJogador.getVida() <= 0) {
-                paineis.pausa(700);
-                System.out.println("\nSeu monstro foi derrotado...");
-                paineis.pausa(1000);
+                paineis.painelDerrota(monstroJogador);
 
                 vitoria = false;
                 break;

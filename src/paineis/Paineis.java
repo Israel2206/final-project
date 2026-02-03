@@ -81,7 +81,7 @@ public class Paineis {
 
     //Adicionando os métodos de dar uma pausa aqui, pois não tem um lugar melhor
     public void pausa(int millis) {
-        //millis = 0; //isso é caso formos testar o código
+        millis = 0; //isso é caso formos testar o código
         try {
             Thread.sleep(millis);
         } catch (InterruptedException e) {
@@ -319,6 +319,27 @@ public class Paineis {
         pausa(200);
         System.out.println("[ 5 ] Mostrar Status");
         pausa(300);
+    }
+
+    public void painelDerrota(Monstro monstro) {
+        pausa(900);
+        System.out.println("\n======================================");
+        System.out.println("              DERROTA");
+        System.out.println("======================================\n");
+        pausa(1000);
+
+        System.out.println(monstro.getNome() + " caiu em batalha.");
+        pausa(700);
+        System.out.println("Ele tentou resistir até o fim.");
+        System.out.println();
+        pausa(1200);
+
+        System.out.println("Você foi derrotado.");
+        pausa(900);
+        System.out.println("A arena permanece em silêncio.");
+        System.out.println();
+        pausa(1300);
+        System.out.println("======================================");
     }
 
 

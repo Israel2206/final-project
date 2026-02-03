@@ -83,12 +83,7 @@ public class LutaUm {
                 System.out.println("\nSeu monstro foi derrotado...");
                 paineis.pausa(900);
 
-                System.out.println("O inimigo nem parecia tão forte assim.");
-                paineis.pausa(800);
-                System.out.println("Talvez a diferença não estivesse na batalha...");
-                paineis.pausa(800);
-                System.out.println("Mas em quem estava tomando as decisões.");
-                paineis.pausa(1200);
+                paineis.painelDerrota(monstroJogador);
                 vitoria=false;
                 break;
             }
