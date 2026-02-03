@@ -81,7 +81,7 @@ public class Paineis {
 
     //Adicionando os métodos de dar uma pausa aqui, pois não tem um lugar melhor
     public void pausa(int millis) {
-        millis = 0; //isso é caso formos testar o código
+        //millis = 0; //isso é caso formos testar o código
         try {
             Thread.sleep(millis);
         } catch (InterruptedException e) {
@@ -314,9 +314,9 @@ public class Paineis {
 
         System.out.println("[ 1 ] "+monstroJogador.getAtaqueBase());
         pausa(200);
-        System.out.println("[ 2 ] "+monstroJogador.getAtaqueEspecial()+" "+monstroJogador.getLimiteDeAtaqueEspecial()+"/5");
+        System.out.println("[ 2 ] "+monstroJogador.getAtaqueEspecial()+" "+monstroJogador.getLimiteDeAtaqueEspecial()+"/"+monstroJogador.getATAQUE_ESPECIAL());
         pausa(200);
-        System.out.println("[ 3 ] "+monstroJogador.getAtaqueDesbloqueado()+" "+monstroJogador.getLimiteDeAtaqueDesbloqueado()+"/8");
+        System.out.println("[ 3 ] "+monstroJogador.getAtaqueDesbloqueado()+" "+monstroJogador.getLimiteDeAtaqueDesbloqueado()+"/"+monstroJogador.getATAQUE_DESBLOQUEADO());
         pausa(200);
         System.out.println("[ 4 ] Usar Poção de HP (" + jogador.getPocaoHp() + ")");
         pausa(200);

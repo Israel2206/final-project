@@ -19,7 +19,7 @@ public class LutaQuatro {
 
     private Scanner sc = new Scanner(System.in);
     private Random random = new Random();
-    private int chance = 75;
+    private int chance;
 
     public LutaQuatro(Jogador jogador) {
         this.jogador = jogador;
@@ -53,6 +53,7 @@ public class LutaQuatro {
 
         do {
             paineis.pausa(400);
+            chance = random.nextInt(100)+1;
             turnoDoJogador();
             paineis.pausa(500);
 
@@ -81,6 +82,7 @@ public class LutaQuatro {
             }
 
             paineis.pausa(400);
+            chance = random.nextInt(100)+1;
             turnoInimigo();
             paineis.pausa(500);
 

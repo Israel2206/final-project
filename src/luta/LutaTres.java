@@ -20,7 +20,7 @@ public class LutaTres {
 
     private Scanner sc = new Scanner(System.in);
     private Random random = new Random();
-    private int chance = 65;
+    private int chance;
 
     // Monstro de água fixo
     public LutaTres(Jogador jogador) {
@@ -41,6 +41,7 @@ public class LutaTres {
         System.out.println("======================\n");
 
         do {
+            chance = random.nextInt(100)+1;
             turnoDoJogador();
 
             if (monstroInimigo.getVida() <= 0) {
@@ -64,7 +65,7 @@ public class LutaTres {
                 vitoria = true;
                 break;
             }
-
+            chance = random.nextInt(100)+1;
             turnoInimigo();
 
             if (monstroJogador.getVida() <= 0) {

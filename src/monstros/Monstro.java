@@ -19,11 +19,11 @@ public class Monstro {
 
     //O máximo, não se pode alterar-lós, por conta do 'final'.
     protected final int ATAQUE_ESPECIAL = 5;
-    protected final int ATAQUE_DESBLOQUEADO = 8;
+    protected final int ATAQUE_DESBLOQUEADO = 6;
 
     //limitadores
     protected int limiteDeAtaqueEspecial = 5;
-    protected int limiteDeAtaqueDesbloqueado = 8;
+    protected int limiteDeAtaqueDesbloqueado = 6;
 
     //Os valores ints
     protected int dano;

@@ -21,7 +21,7 @@ public class LutaUm {
 
     private Scanner sc = new Scanner(System.in);
     private Random random = new Random();
-    private int chance = 70;
+    private int chance;
 
     //Construtor
     public LutaUm(Jogador jogador) {
@@ -51,6 +51,8 @@ public class LutaUm {
         System.out.println("======================\n");
 
         do {
+            //chance de acertar vai de 1 a 100;
+            chance = random.nextInt(100)+1;
             turnoDoJogador();
 
             if (monstroInimigo.getVida() <= 0) {
@@ -76,6 +78,7 @@ public class LutaUm {
                 break;
             }
 
+            chance = random.nextInt(100)+1;
             turnoInimigo();
 
             if (monstroJogador.getVida() <= 0) {
