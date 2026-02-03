@@ -63,7 +63,7 @@ public class LutaQuatro {
 
                 System.out.println("Você recebeu +1 poção de HP!");
                 paineis.pausa(700);
-                jogador.setPocaoHp(jogador.getPocaoHp() + 1);
+                jogador.setPocaoHp(jogador.getPocaoHp() + 3);
 
                 System.out.println("A Vida do seu " + monstroJogador.getNome() + " está cheia novamente!");
                 monstroJogador.setNivel(monstroJogador.getNivel()+1);
