@@ -265,6 +265,8 @@ public class Paineis {
                 + " (" + jogador.getMonstro().getTipo().toUpperCase() + ")");
         pausa(200);
         System.out.println("Vida    : " + jogador.getMonstro().getVida());
+        System.out.println("Nível   : "+jogador.getMonstro().getNivel());
+        pausa(200);
         System.out.println();
         pausa(500);
 
@@ -280,6 +282,7 @@ public class Paineis {
                 + " (" + monstroInimigo.getTipo().toUpperCase() + ")");
         pausa(200);
         System.out.println("Vida    : " + (int) monstroInimigo.getVida());
+        System.out.println("Nível   : "+monstroInimigo.getNivel());
         System.out.println();
         pausa(600);
 
@@ -699,6 +702,7 @@ public class Paineis {
     public void mostrarAtualizacao(Monstro monstro){
         System.out.println("HP atualizado: "+monstro.getFullVida());
         System.out.println("Dano Atualizado: "+monstro.getDano());
+        System.out.println("Nível: "+monstro.getNivel());
     }
 
     public void painelNovoAtaque(Monstro monstro) {
