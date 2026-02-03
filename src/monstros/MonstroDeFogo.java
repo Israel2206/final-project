@@ -9,9 +9,9 @@ public class MonstroDeFogo  extends Monstro{
         this.ataqueBase = "Rabada de Fogo";
         this.multiplicadorBase = 1.0;
         this.ataqueEspecial = "Fosforo com rexona";
-        this.multiplicadorEspecial = 1.25;
+        this.multiplicadorEspecial = 1.30;
         this.ataqueDesbloqueado = "Fogo Em 1080p";
-        this.multiplicadorDesbloqueado = 1.15;
+        this.multiplicadorDesbloqueado = 1.40;
     }
 
     @Override

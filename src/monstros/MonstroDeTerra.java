@@ -9,9 +9,9 @@ public class MonstroDeTerra  extends Monstro {
         this.ataqueBase = "Fio-Terra";
         this.multiplicadorBase = 1.0;
         this.ataqueEspecial = "Pedra que esmagou obito";
-        this.multiplicadorEspecial = 1.25;
+        this.multiplicadorEspecial = 1.30;
         this.ataqueDesbloqueado = "Terra Batida Premium";
-        this.multiplicadorDesbloqueado = 1.15;
+        this.multiplicadorDesbloqueado = 1.40;
     }
 
     @Override

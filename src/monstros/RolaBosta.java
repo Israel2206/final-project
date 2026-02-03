@@ -10,9 +10,9 @@ public class RolaBosta extends Monstro {
         this.ataqueBase = "Rolada de Bosta";
         this.multiplicadorBase = 1.0;
         this.ataqueEspecial = "Diarreia";
-        this.multiplicadorEspecial = 1.4;
+        this.multiplicadorEspecial = 1.40;
         this.ataqueDesbloqueado = "Rolada Suprema Mas Nem Tanto";
-        this.multiplicadorDesbloqueado = 1.15;
+        this.multiplicadorDesbloqueado = 1.50;
     }
 
     @Override
