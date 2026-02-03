@@ -738,6 +738,67 @@ public class Paineis {
         pausa(900);
         System.out.println("======================================");
     }
+    public void painelLutaRolaBosta() {
+        pausa(700);
+        System.out.println("\n======================================");
+        System.out.println("      DESAFIO COMPLETAMENTE DESNECESSÁRIO");
+        System.out.println("======================================");
+        System.out.println();
+        pausa(900);
+
+        System.out.println("A arena fica em silêncio...");
+        pausa(700);
+        System.out.println("O público não entende o que está acontecendo.");
+        pausa(700);
+        System.out.println();
+
+        System.out.println("Um juiz se aproxima e cochicha:");
+        pausa(900);
+        System.out.println("\"Isso não faz parte do torneio.\"");
+        pausa(900);
+        System.out.println("\"Você pode ir embora agora.\"");
+        pausa(1000);
+        System.out.println();
+
+        System.out.println("Mas você decidiu continuar.");
+        pausa(700);
+        System.out.println("Provavelmente por orgulho.");
+        pausa(700);
+        System.out.println("Ou falta do que fazer.");
+        pausa(900);
+        System.out.println();
+
+        System.out.println("O chão começa a feder.");
+        pausa(700);
+        System.out.println("Algo pesado rola lentamente pela arena...");
+        pausa(900);
+        System.out.println();
+
+        System.out.println("O público começa a rir.");
+        pausa(700);
+        System.out.println("Depois para.");
+        pausa(700);
+        System.out.println();
+
+        System.out.println("Surge o inimigo mais humilhante já visto:");
+        pausa(900);
+        System.out.println(">>> ROLA-BOSTA ANCESTRAL <<<");
+        pausa(900);
+        System.out.println();
+
+        System.out.println("Ele não parece rápido.");
+        pausa(600);
+        System.out.println("Não parece inteligente.");
+        pausa(600);
+        System.out.println("Mas definitivamente parece perigoso.");
+        pausa(900);
+        System.out.println();
+
+        System.out.println("Boa sorte.");
+        pausa(700);
+        System.out.println("Você vai precisar.");
+        pausa(1000);
+    }
 
 
 
