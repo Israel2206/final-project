@@ -241,19 +241,21 @@ public class Monstro {
     public void usarAtaqueConquistado(Monstro monstroUm, Monstro monstroDois, int chance){
         System.out.println("\nO "+monstroUm.getNome()+" tentou usar "+monstroUm.getAtaqueDesbloqueado()+"!");
 
+        if (monstroUm.limiteDeAtaqueDesbloqueado <= 0){
+            System.out.println(monstroUm.getNome()+" tenta usar "+monstroUm.getAtaqueEspecial()+" porém o limite foi atingido!");
+            return;
+        }
+
         if(!acertarAtaque(chance)){
             System.out.println("Mas o ataque errou!");
             monstroUm.setLimiteDeAtaqueDesbloqueado(monstroUm.getLimiteDeAtaqueDesbloqueado()-1);
         } else {
-            if (monstroUm.limiteDeAtaqueDesbloqueado <= 0){
-                System.out.println(monstroUm.getNome()+" tenta usar "+monstroUm.getAtaqueDesbloqueado()+" porém o limite foi atingido!");
-            }else {
-                double multiplicador = receberDanoDesbloqueado(monstroDois);
-                int dano = (int) (monstroUm.getDano() * multiplicador);
-                aplicarDano(monstroDois, dano);
-                System.out.println("Ataque acertou! Dano causado: " + dano);
-                monstroUm.setLimiteDeAtaqueDesbloqueado(monstroUm.getLimiteDeAtaqueDesbloqueado()-1);
-            }
+            double multiplicador = receberDanoDesbloqueado(monstroDois);
+            int dano = (int) (monstroUm.getDano() * multiplicador);
+            aplicarDano(monstroDois, dano);
+            System.out.println("Ataque acertou! Dano causado: " + dano);
+            monstroUm.setLimiteDeAtaqueDesbloqueado(monstroUm.getLimiteDeAtaqueDesbloqueado()-1);
+
         }
 
         monstroUm.mostrarVida(monstroUm,monstroDois);
