@@ -255,6 +255,11 @@ public class Main {
                                             System.out.println("\n=== GAME OVER ===");
                                         } else {
                                             painel.painelLutaFinalDepois();
+                                            System.out.println("Aperte enter para o desafio secreto!");
+                                            sc.nextLine();
+                                            painel.painelLutaRolaBosta();
+
+
                                         }
                                     }
                                 }
