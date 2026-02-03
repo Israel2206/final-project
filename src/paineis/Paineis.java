@@ -687,16 +687,28 @@ public class Paineis {
         System.out.println();
         pausa(1200);
 
+        pausa(800);
         System.out.println("======================================");
         System.out.println("               CRÉDITOS");
         System.out.println("======================================\n");
+        pausa(1000);
+
         System.out.println("Design de níveis: Breno Israel e Igor Franco");
+        pausa(600);
         System.out.println("Métodos Específicos: Breno Israel");
+        pausa(600);
         System.out.println("Roteiro: Igor Franco");
+        pausa(600);
         System.out.println("Programação: Breno Israel e Igor Franco");
+        pausa(800);
+
         System.out.println("Projeto final desenvolvido para o curso de JAVA");
+        pausa(700);
         System.out.println("Docente Responsável: Neidson Sampaio");
+        pausa(900);
+
         System.out.println("Apoio: Kid Bengala, João do pão, BBB26, PT");
+        pausa(1200);
     }
 
     public void mostrarAtualizacao(Monstro monstro){
